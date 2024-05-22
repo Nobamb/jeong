@@ -1,0 +1,1362 @@
+/* 언어설정 */
+
+@charset 'utf-8';
+
+/* 전체설정 */
+
+*{
+  margin:0;
+  padding:0;
+}
+ul{
+  list-style: none;
+}
+a{
+  color:#000;
+  text-decoration: none;
+}
+
+
+/* 기본설정 */
+.wrap{
+  position:relative;
+  display:flex;
+  flex-wrap: wrap;
+
+}
+.info-section{
+  background-color: #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 슬라이더 */
+.slider_section{
+  background-color: #bbb;
+  width:50%;
+  height: 450px;
+  order:2;
+}
+/* 갤러리 */
+.gallery_section{
+  background-color: #ccc;
+  width:25%;
+  height: 450px;
+  order:3;
+}
+/* 인기검색어 */
+.rankup_section{
+  background-color: #ddd;
+  width:25%;
+  height: 450px;
+  order:4;
+}
+/* 최근글 */
+.latest_post_section{
+  background-color: #eee;
+  width: 30%;
+  height: 300px;
+  order:5;
+  padding:40px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* 인기글영역 */
+.popular_post_section{
+  padding:40px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  order:6;
+  background-color: #888;
+  width:30%;
+  height: 300px;
+}
+/* 배너 */
+.banner_section{
+  order:7;
+  width:25%;
+  height: 300px;
+  display:flex;
+  flex-direction: column;
+}
+.banner_box_001{
+  height:50%;
+  background-color: #777;
+}
+.banner_box_002{
+  height:50%;
+  background-color: #666;
+}
+/* 소셜영역 */
+.social_section{
+  order:8;
+  width:15%;
+  height: 300px;
+  background-color: #555;
+}
+/* 푸터설정 */
+.footer{
+  order:9;
+  width:100%;
+  height: 50px;
+  background-color: #444;
+}
+
+
+
+
+
+
+
+
+/* 인포메이션 설정 */
+.info-section{
+  position: absolute;
+  z-index: 999;
+  top:30px;
+  right:30px;
+}
+.info-section ul{
+  display: flex;
+}
+.info-section li{
+
+}
+.info-section li a{
+  display: block;
+  padding: 20px;
+
+}
+
+
+
+
+
+/* 헤더설정 */
+.header{
+  z-index: 11;
+  order:1;
+  width: 100%;
+  display: flex;
+  position:relative;
+  justify-content: flex-end;
+}
+h1{
+  
+  font-size: 20px;
+  width:12.5%;
+  height: 200px;
+  background-color: #555;
+  position:absolute;
+  left: 0;
+  top:0;
+}
+nav{
+  width:87.5%;
+  height: 140px;
+  background-color: #444;
+}
+
+
+
+
+
+
+
+
+/* 상세설정 */
+
+/* 헤더_로고설정 */
+
+
+.header h1{
+  background-color: #2ecc71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header h1 a{
+  text-align: center;
+  overflow:hidden;
+  color:#fff;
+}
+
+.header nav{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2ecc71;
+}
+
+
+.header nav ul{
+  display: flex;
+}
+
+
+.header nav li{
+
+}
+.header nav li a{
+  color:#fff;
+  font-weight: bold;
+  padding:20px;
+  display: block;
+}
+.header nav span{
+  display: none;
+}
+
+
+
+
+
+
+
+/* 슬라이더 섹션 설정 */
+.slider_section{
+  z-index: 10;
+  background-image: url('./images/p_images/slider_01.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  position:relative;
+}
+.slider_section span{
+  position:absolute;
+  width:34px;
+  height: 39px;
+  
+  top: 50%;
+  margin-top:-19.5px;
+  background-image: url('images/s_images/slider_arrow.png');
+}
+.slider_section .prev_btn{
+  text-indent: -9999px;
+  margin-left:-9px;
+  left:0px;
+  background-position: 0 0;
+}
+.slider_section .next_btn{
+  text-indent: -9999px;
+  background-position: -34px 0;
+  margin-right:-9px;
+  right:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 갤러리 구간 설정 */
+.gallery_section{
+background-color: #e65d5d;
+}
+
+.gallery_section ul{
+  display: flex;
+  width:100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gallery_section li{
+}
+.gallery_section a{
+  color:#fff;
+  font-weight: bold;
+  display: block;
+  padding:20px;
+  box-sizing: border-box;
+}
+.gallery_section figure{
+  text-align: center;
+}
+.gallery_section img{
+  width: 100%;
+  height: auto;
+  max-width:200px;
+}
+.gallery_section figcaption{
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 인기검색어 상세 설정 */
+
+
+.rankup_section{
+  background-color: #219af7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rankup_section h2{
+  text-align: center;
+  margin-bottom:20px;
+  font-size: 18px;
+  color:#fff;
+}
+.rankup_section ol{
+  counter-reset: rankup 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+/* .rankup_section li::before{
+  counter-increment: rankup 1;
+  content: counter(rankup-counter) '.';
+} */
+/* li의 내용 앞부분에 숫자를 기재해서 추후
+개발 모드가 들어갔을 때 순번을 나타낸다. */
+
+
+.rankup_section li{
+  color:#fff;
+ 
+  text-align: left;
+  font-weight: bold;
+}
+.rankup_section a{
+  display: block;
+  text-align: left;
+  color:#fff;
+  font-weight: bold;
+  padding:5px 0;
+}
+
+
+
+
+
+
+
+
+/* 최근글 상세설정 */
+.latest_post_section{
+  
+  background-color: gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.latest_post_section h2{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+
+.latest_post_section ul{
+  color:#fff;
+  list-style:circle;
+}
+
+.latest_post_section li{
+  
+}
+
+
+.latest_post_section a{
+  font-weight: bold;
+  display: block;
+  padding:5px;
+  color:#fff;
+}
+
+
+
+
+
+
+/* 인기글 상세설정 */
+.popular_post_section{
+  background-color:blueviolet;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popular_post_section h2{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+
+.popular_post_section ul{
+  color:#fff;
+  list-style:circle;
+}
+
+.popular_post_section li{
+  
+}
+
+
+.popular_post_section a{
+  font-weight: bold;
+  display: block;
+  padding:5px;
+  color:#fff;
+}
+
+
+
+
+
+/* 배너설정 */
+
+
+.banner_box_001{
+  background-color: deeppink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_box_001 a{
+
+}
+.banner_box_001 img{
+
+}
+
+
+.banner_box_002{
+  background-color: crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner_box_002 ul{
+  display: flex;
+  width:60%;
+  justify-content: space-between;
+}
+.banner_box_002 li{
+  
+}
+.banner_box_002 a{
+ 
+}
+.banner_box_002 img{
+
+}
+
+
+
+
+/* sns 설정 */
+.social_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.social_section ul{
+  
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.social_section li{
+  
+}
+
+.social_section a{
+ 
+}
+
+.social_section img{
+
+}
+
+
+
+
+/* 푸터 설정 */
+.footer{
+  display: flex;
+  align-items: center;
+}
+
+
+.footer p{
+  padding:20px;
+  font-size:12px;
+  
+  color:#fff;
+}
+
+
+
+
+/* 미디어쿼리 구간------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* 모바일 구간 설정 */
+@media(max-width:599px){
+
+
+
+
+  /* 인포메이션 설정 */
+.info-section{
+  width:100%;
+  position: relative;
+  z-index: 999;
+  top:0;
+  right:0;
+}
+.info-section ul{
+  width:100%;
+  display: flex;
+}
+.info-section li{
+  width:25%;
+}
+.info-section li a{
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+
+
+/* 헤더설정 */
+  header{
+    order:1;
+    width: 100%;
+    display: flex;
+    position:relative;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+  h1{
+    width:100%;
+    height: 200px;
+    background-color: #555;
+    position:relative;
+    left: 0;
+    top:0;
+  }
+  nav{
+    width:100%;
+    height: 140px;
+    background-color: #444;
+    
+  }
+    /* 슬라이더 */
+  .slider_section{
+    background-color: #bbb;
+    width:100%;
+    height: 200px;
+    order:2;
+    padding:40px 0;
+  }
+  /* 최근글
+  (높이가 200일때 패딩이 안쪽으로 들어감
+  ->250으로 수정 */
+  .latest_post_section{
+    background-color: #eee;
+    width: 100%;
+    height: 250px;
+    order:3;
+    padding:20px 0px;
+    box-sizing: border-box;
+  }
+  /* 인기글영역
+  (높이가 200일때 패딩이 안쪽으로 들어감
+  ->250으로 수정) */
+  .popular_post_section{
+    order:4;
+    height: 250px;
+    background-color: #888;
+    width:100%;
+    padding:20px 0px;
+    box-sizing: border-box;
+  }
+  /* 갤러리 */
+  .gallery_section{
+
+    background-color: #ccc;
+    width:100%;
+    height: 800px;
+    order:5;
+  }
+  /* 인기검색어 */
+  .rankup_section{
+    background-color: #ddd;
+    width:100%;
+    height: 300px;
+    order:6;
+    padding:40px 0;
+  }
+  /* 배너 */
+  .banner_section{
+    order:7;
+    width:100%;
+    height: 200px;
+    display:flex;
+    flex-direction: column;
+  }
+  /* 소셜영역 */
+.social_section{
+  order:8;
+  width:100%;
+  height: 100px;
+  background-color: #555;
+}
+
+
+
+
+
+
+
+
+
+/* 갤러리 구간 설정 */
+.gallery_section{
+  background-color: #e65d5d;
+  }
+  
+  .gallery_section ul{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .gallery_section li{
+  }
+  .gallery_section a{
+    color:#fff;
+    font-weight: bold;
+    display: block;
+    padding:20px;
+    box-sizing: border-box;
+  }
+  .gallery_section figure{
+    text-align: center;
+  }
+  .gallery_section img{
+    width: 100%;
+    height: auto;
+    max-width:200px;
+  }
+  .gallery_section figcaption{
+    margin-top: 20px;
+  }
+  
+  
+
+
+
+
+/* 토글설정 */
+.header nav{
+  position:relative;
+}
+.header nav span{
+  display: block;
+  width:30px;
+  height: 30px;
+  background-image: url('./images/s_images/menu_toggle_btn.png');
+  position:absolute;
+  right:20px;
+  text-indent: -9999px;
+  top:50%;
+  margin-top:-15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 인기검색어 상세 설정 */
+
+
+.rankup_section{
+  background-color: #219af7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rankup_section h2{
+  text-align: center;
+  margin-bottom:20px;
+  font-size: 18px;
+  color:#fff;
+}
+.rankup_section ol{
+  width:80%;
+  counter-reset: rankup 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+}
+/* .rankup_section li::before{
+  counter-increment: rankup 1;
+  content: counter(rankup-counter) '.';
+} */
+/* li의 내용 앞부분에 숫자를 기재해서 추후
+개발 모드가 들어갔을 때 순번을 나타낸다. */
+
+
+.rankup_section li{
+  width:45%;
+  color:#fff;
+ 
+  text-align: left;
+  font-weight: bold;
+}
+.rankup_section a{
+  border:1px solid #fff;
+  display: block;
+  text-align: center;
+  color:#fff;
+  font-weight: bold;
+  padding:8px 0;
+  border-radius: 5px;
+  margin-bottom:10px;
+}
+
+
+
+
+
+/* 갤러리 구간 설정 */
+.gallery_section{
+  background-color: #e65d5d;
+  }
+  
+  .gallery_section ul{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .gallery_section li{
+  }
+  .gallery_section a{
+    color:#fff;
+    font-weight: bold;
+    display: block;
+    padding:20px;
+    box-sizing: border-box;
+  }
+  .gallery_section figure{
+    text-align: center;
+  }
+  .gallery_section img{
+    width: 100%;
+    height: auto;
+    max-width:500px;
+  }
+  .gallery_section figcaption{
+    margin-top: 20px;
+  }
+  
+  
+
+
+
+
+
+
+
+/* 최신글 영역 */
+.latest_post_section{
+  background-color: gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.latest_post_section h2{
+  font-size: 20px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+
+.latest_post_section ul{
+  color:#fff;
+  list-style:circle;
+}
+
+.latest_post_section li{
+  
+}
+
+
+.latest_post_section a{
+  font-weight: bold;
+  display: block;
+  padding:5px;
+  color:#fff;
+}
+
+
+
+
+
+
+/* 인기글 영역 */
+.popular_post_section{
+ 
+  background-color:blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popular_post_section h2{
+  font-size: 20px;
+  margin-bottom:20px;
+  color:#fff;
+}
+
+
+.popular_post_section ul{
+  color:#fff;
+  list-style:circle;
+}
+
+.popular_post_section li{
+  
+}
+
+
+.popular_post_section a{
+  font-weight: bold;
+  display: block;
+  padding:5px;
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+/* 배너박스 상세설정 */
+
+
+
+
+/* 배너1 */
+.banner_box_001{
+  background-color: deeppink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner_box_001 a{
+
+}
+.banner_box_001 img{
+
+}
+
+
+/* 배너2 */
+.banner_box_002{
+  background-color: crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner_box_002 ul{
+  display: flex;
+  width:80%;
+  margin: 0 auto;
+  justify-content:space-between;
+}
+.banner_box_002 li{
+
+}
+.banner_box_002 a{
+  display: block;
+  
+}
+.banner_box_002 img{
+
+}
+
+
+
+
+/* sns */
+.social_section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.social_section ul{
+  display: flex;
+  flex-direction: row;
+  width:80%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content:space-between;
+}
+
+
+.social_section li{
+  
+}
+
+.social_section a{
+  display: block;
+  
+}
+
+.social_section img{
+
+}
+
+
+
+/* 푸터 */
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.footer p{
+  font-size:12px;
+  
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+/* 태블릿 구간 설정 */
+@media(min-width:600px) and (max-width:768px){
+
+
+
+
+  /* 인포메이션 설정 */
+  .info-section{
+    width:100%;
+    position: relative;
+    z-index: 999;
+    top:0;
+    right:0;
+  }
+  .info-section ul{
+    width:100%;
+    display: flex;
+  }
+  .info-section li{
+    width:25%;
+  }
+  .info-section li a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
+
+
+
+  /* 슬라이더 */
+  .slider_section{
+    width:60%;
+    height: 300px;
+    order:2;
+  }
+  /* 인기검색어 */
+  .rankup_section{
+    width:40%;
+    height: 300px;
+    order:3;
+  }
+  /* 최근글 */
+  .latest_post_section{
+    width: 40%;
+    height: 270px;
+    order:4;
+  }
+  /* 인기글영역 */
+  .popular_post_section{
+    order:5;
+    width:40%;
+    height: 270px;
+  }
+  /* 소셜영역 */
+  .social_section{
+    order:6;
+    width:20%;
+    height: 270px;
+  }
+  /* 갤러리 */
+  .gallery_section{
+    width:70%;
+    height: 250px;
+    order:7;
+  }
+  /* 배너 */
+  .banner_section{
+    order:8;
+    width:30%;
+    height: 250px;
+  }
+
+
+
+/* 토글설정 */
+.header nav{
+  position:relative;
+}
+.header nav span{
+  display: block;
+  width:30px;
+  height: 30px;
+  background-image: url('./images/s_images/menu_toggle_btn.png');
+  position:absolute;
+  right:20px;
+  text-indent: -9999px;
+  top:50%;
+  margin-top:-15px;
+}
+
+
+
+
+
+
+/* 인기검색어 상세 설정 */
+
+
+.rankup_section{
+  background-color: #219af7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.rankup_section h2{
+  text-align: center;
+  margin-bottom:20px;
+  font-size: 18px;
+  color:#fff;
+}
+.rankup_section ol{
+  width:80%;
+  counter-reset: rankup 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+}
+/* .rankup_section li::before{
+  counter-increment: rankup 1;
+  content: counter(rankup-counter) '.';
+} */
+/* li의 내용 앞부분에 숫자를 기재해서 추후
+개발 모드가 들어갔을 때 순번을 나타낸다. */
+
+
+.rankup_section li{
+  width:45%;
+  color:#fff;
+ 
+  text-align: left;
+  font-weight: bold;
+}
+.rankup_section a{
+  border:1px solid #fff;
+  display: block;
+  text-align: center;
+  color:#fff;
+  font-weight: bold;
+  padding:8px 0;
+  border-radius: 5px;
+  margin-bottom:10px;
+}
+
+
+
+
+
+
+
+/* 갤러리 구간 설정 */
+.gallery_section{
+  background-color: #e65d5d;
+  }
+  
+  .gallery_section ul{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .gallery_section li{
+  }
+
+  .gallery_section a{
+    color:#fff;
+    font-weight: bold;
+    display: block;
+    padding:20px;
+    box-sizing: border-box;
+  }
+
+  .gallery_section figure{
+    text-align: center;
+  }
+
+  .gallery_section img{
+    width: 100%;
+    height: auto;
+    max-width:500px;
+  }
+  
+  .gallery_section figcaption{
+    margin-top: 20px;
+  }
+  
+  
+
+
+
+  .latest_post_section{
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .latest_post_section h2{
+    font-size: 20px;
+    margin-bottom:20px;
+    color:#fff;
+  }
+
+
+  .latest_post_section ul{
+    color:#fff;
+    list-style:circle;
+  }
+
+  .latest_post_section li{
+    
+  }
+
+
+  .latest_post_section a{
+    font-weight: bold;
+    display: block;
+    padding:5px;
+    color:#fff;
+  }
+
+
+
+
+
+
+
+  .popular_post_section{
+    background-color:blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .popular_post_section h2{
+    font-size: 20px;
+    margin-bottom:20px;
+    color:#fff;
+  }
+
+
+  .popular_post_section ul{
+    color:#fff;
+    list-style:circle;
+  }
+
+  .popular_post_section li{
+    
+  }
+
+
+  .popular_post_section a{
+    font-weight: bold;
+    display: block;
+    padding:5px;
+    color:#fff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .banner_section{
+
+  }
+
+
+  .banner_box_001{
+
+  }
+
+ .banner_box_002{
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+/* 데스크탑 구간 설정 */
+@media(min-width:769px){
+
+}
+
+
+/* 와이드 데스크탑 구간 설정 */
+@media(min-width:1280px){
+  .wrap{
+    width:80%;
+    margin:0 auto;
+  }
+}
