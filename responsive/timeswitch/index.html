@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeSwitch</title>
+  <!-- 그리드가이드  -->
+  <!-- <link rel="stylesheet" href="grid-guide.css"> -->
+  <!-- 외부스타일시트연결 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 폰트어썸연결 -->
+  <script src="https://kit.fontawesome.com/92ddaf21cc.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+
+  <div class="boxA-out">
+    <div class="boxA">
+
+      <div class="box1">
+        <h1 class="logo"><a href="">
+            <img src="img/logo-large.png" alt="" width="250" height="auto">
+          </a></h1>
+      </div>
+
+      <div class="box2">
+
+
+        <button class="menuBtn"><i class="fa-solid fa-bars"></i></button>
+
+
+        <nav class="gnb">
+          
+          <ul>
+            <li><a href="">메인</a></li>
+            <li><a href="">연혁</a></li>
+            <li><a href="">사업소개</a></li>
+            <li><a href="">채용정보</a></li>
+            <li><a href="">문의</a></li>
+          </ul>
+        </nav>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+
+  
+
+
+
+  
+    <div class="box3">
+      <img src="img/header.jpg" alt="" class="topimg">
+      <p class="explain">TimeSwitch는 데이터 축적과 <br>
+        분석/해석 서비스를 제공합니다.
+      </p>
+    </div>
+
+
+
+    <div class="box6">
+
+
+
+      <div class="box6-1">
+        <a href="">
+          <!-- 데스크탑 기준 width 32% -->
+          <ul class="data">
+            <li class="icon">
+              <i class="fa-solid fa-database"></i>
+            </li>
+            <li class="title">데이터 분석/해석</li>
+            <li class="txt">목적에 맞는 다양한 각도로 <br>
+            데이터를 분석/해석합니다. </li>
+          </ul>
+        </a>
+      </div>
+
+      <div class="box6-2">
+        <a href="">
+          <!-- 데스크탑 기준 width 32% -->
+          <ul class="chart">
+            <li class="icon"><i class="fa-solid fa-chart-simple"></i></li>
+            <li class="title">데이터 시각화</li>
+            <li class="txt">해석 결과는 데이터 시각화해서 <br>
+            활용할 수 있게 합니다.</li>
+          </ul>
+        </a>
+      </div>
+
+
+      <div class="box6-3">
+        <a href="">
+          <!-- 데스크탑 기준 width 32% -->
+          <ul class="message">
+            <li class="icon"><i class="fa-solid fa-envelope"></i></li>
+            <li class="title">24시간 지원</li>
+            <li class="txt">24시간 대응 팀으로 <br>
+            장애에 신속하게 대응합니다.</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+
+  
+    <div class="box4">
+      <div class="notice">
+        <h2>공지사항</h2>
+        <ul>
+          <li><a href=""><time>04/05</time>
+              <div class="txt">데이터센터 유지보수를 수행합니다.</div>
+            </a></li>
+          <li><a href=""><time>04/01</time>
+              <div class="txt">안드로이드 애플리케이션 버전 1.2를 출시했습니다.</div>
+            </a></li>
+          <li><a href=""><time>03/22</time>
+              <div class="txt">세미나/캠패인 과 관련된 공지사항</div>
+            </a></li>
+          <li><a href=""><time>02/15</time>
+              <div class="txt">그래프 표시의변경 반식을 쉽게 바꿨습니다.</div>
+            </a></li>
+        </ul>
+
+      </div>
+      <div class="sns">
+        <div class="lately">
+          최신 정보를 여기서도 받아보세요!
+        </div>
+        <ul>
+          <li><a href="" class="twitter"><i class="fa-brands fa-twitter"></i><span class="snsTxt">Twitter</span></a>
+          </li>
+          <li><a href="" class="facebook"><i class="fa-brands fa-facebook-f"></i><span
+                class="snsTxt">Facebook</span></a></li>
+          <li><a href="" class="google"><i class="fa-brands fa-google-plus-g"></i><span
+                class="snsTxt">Google+</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box5">
+      <div class="copyright">
+        <p>Copyright &copy; Timeswitch </p>
+      </div>
+    </div>
+<!-- 제이쿼리 연결 -->
+<script src="http://code.jquery.com/jquery-latest.js">
+</script>
+
+
+<script>
+
+  // 제이쿼리 선언문
+  // ready는 밑이 아닐때에 선언(태그를 다 읽고 실행함을 의미)
+  $(document).ready(function(){
+
+    // menuBtn을 클릭했을때 gnb가 toggle가 되어라
+
+     $('.menuBtn').click(function(){
+
+      $('.gnb').slideToggle();
+      $('.logo').css({
+        'background-color':'red'
+        });
+      
+
+      
+   })
+
+
+})
+
+
+
+
+  
+</script>
+
+
+
+
+
+</body>
+
+</html>
