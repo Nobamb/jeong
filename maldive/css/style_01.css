@@ -1,0 +1,966 @@
+/* 언어설정 */
+@charset 'utf-8';
+/* 글꼴설정 */
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+/* 전체설정 */
+*{
+  margin:0;
+  padding:0;
+}
+ul, ol{
+  list-style: none;
+}
+a{
+  color:#000;
+  text-decoration: none;
+}
+img{
+  vertical-align:bottom;
+}
+/* 웹 내의 글꼴은 poeret으로 통일*/
+body{
+  font-family: "Poiret One", sans-serif;
+}
+/* 기본설정 */
+
+header{
+  background-color: #fff;
+}
+nav{
+  background-color: #000;
+}
+section:nth-child(1){
+  background-color: #ccc;
+}
+section:nth-child(2){
+  background-color: #ddd;
+}
+section:nth-child(3){
+  background-color: #aaa;
+}
+section:nth-child(4){
+  background-color: #999;
+}
+section:nth-child(5){
+  background-color: #888;
+}
+section:nth-child(6){
+  background-color: #777;
+}
+section:nth-child(7){
+  background-color: #666;
+}
+section:nth-child(8){
+  background-color: #555;
+}
+section:nth-child(9){
+  background-color: #444;
+}
+section:nth-child(10){
+  background-color: #333;
+}
+section:nth-child(11){
+  background-color: #222;
+}
+section:nth-child(12){
+  background-color: #111;
+}
+
+/* 데스크탑 설정 */
+
+header{
+  width:15%;
+  height: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+}
+
+
+
+
+
+/* header가 position이 있기에
+absolute 선언,
+사이즈 지정후 사진 넣기,
+중앙에 넣어야 하기에 left로 50%준후에
+자신의 가로 크기의 절반 값만큼
+움직인 방향만큼 마진을 -값을 줌
+사진은 반복되지 않고, 사진 크기는
+지정한 사이즈 내에 들어가야됨 */
+header h1{
+  text-indent: -9999px;
+  position:absolute;
+  top: 70px;
+  left:50%;
+  margin-left:-90px;
+  width:180px;
+  height: 136px;
+  background-image: url('../img/logo1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* 메뉴들은 absolute선언, 
+300px만큼 위에서 떨어트림 */
+header .gnb{
+  position:absolute;
+  top:300px;
+}
+.gnb li{
+
+}
+/* 링크들의 display를 블록으로 만든뒤
+패딩값을 주어 양방향을 떨어트림 
+글자는 볼드하게 17px로 색은 #555로 설정*/
+.gnb a{
+  display: block;
+  padding:8px 30px;
+  font-weight: bold;
+  font-size:17px;
+  color:#555;
+}
+/* 아이콘과 글자 간격설정 */
+.gnb i{
+  margin-right: 15px;
+}
+
+/* absolute지정 후에
+아래로 끌어내리고
+중앙에 맞추고자 */
+.snsSet{
+  position: absolute;
+  bottom:50px;
+  width:90px;
+  height: 47px;
+  right:50%;
+  margin-right:-45px;
+}
+
+
+
+
+
+
+.snsSet a{
+  float: left;
+}
+.snsSet img{
+
+}
+
+
+nav{
+  position:relative;
+  width: 85%;
+  margin-left:15%;
+  height: 40px;
+}
+nav a{
+  position:absolute;
+  top:5px;
+}
+nav a:nth-child(1){
+  left:10px;
+}
+nav a:nth-child(2){
+  left:150px;
+}
+nav a:nth-child(3){
+  right:96px;
+}
+nav a:nth-child(4){
+  right:10px;
+}
+article{
+  width: 85%;
+  margin-left:15%;
+}
+section{
+  float:left;
+  width:20%;
+  height: 270px;
+}
+section:nth-child(1){
+  width: 60%;
+  height: 540px;
+}
+section:nth-child(2){
+  width:40%;
+}
+section:nth-child(3){
+}
+section:nth-child(4){
+}
+section:nth-child(5){
+
+}
+section:nth-child(6){
+  width:40%;
+}
+section:nth-child(7){
+
+}
+section:nth-child(8){
+
+}
+section:nth-child(9){
+  width:40%;
+}
+section:nth-child(10){
+
+}
+section:nth-child(11){
+
+}
+section:nth-child(12){
+
+}
+
+
+/* 상세설정 */
+
+article>.div{
+
+}
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 설정 -------------------------------------------------*/
+
+
+
+
+
+
+/* 구간 1 설정(1599px~1280px) */
+@media(min-width:1280px) and (max-width:1599px){
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+
+  }
+  article{
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    width:20%;
+    height: 270px;
+  }
+
+
+
+
+
+
+
+  /* header h1(로고)크기 변경
+  그리고 위치 변경
+  (세로형 로고에서
+  가로형 로고로 변경함) */
+  header h1{
+
+    margin-left:0;
+    text-indent: -9999px;
+    position:absolute;
+    top: 20px;
+    left:20px;
+    width:200px;
+    height: 40px;
+    background-image: url('../img/logo2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* gnb부분을 h1밑으로 내린후에
+  flex하여 가로로 나열 */
+  header .gnb{
+    position:absolute;
+    top:20px;
+    right:200px;
+    display: flex;
+  }
+  .gnb li{
+  
+  }
+  /* 링크들의 display를 블록으로 만든뒤
+  패딩값을 주어 양방향을 떨어트림 
+  글자는 볼드하게 17px로 색은 #555로 설정*/
+  .gnb a{
+    display: block;
+    padding:8px 30px;
+    font-weight: bold;
+    font-size:17px;
+    color:#555;
+  }
+  /* 아이콘과 글자 간격설정 */
+  .gnb i{
+    margin-right: 15px;
+  }
+  
+  /* absolute지정 후에
+  아래로 끌어내리고
+  중앙에 맞추고자 */
+  .snsSet{
+    position: absolute;
+    bottom:20px;
+    width:90px;
+    height: 47px;
+    right:80px;
+    margin-right:-45px;
+  }
+  
+
+
+
+
+
+
+  .snsSet a{
+    float: left;
+  }
+  .snsSet img{
+  
+  }
+  nav{
+    position:relative;
+  
+  }
+  nav a{
+    position:absolute;
+    top:5px;
+  }
+  nav a:nth-child(1){
+    left:10px;
+  }
+  nav a:nth-child(2){
+    left:150px;
+  }
+  nav a:nth-child(3){
+    right:96px;
+  }
+  nav a:nth-child(4){
+    right:10px;
+  }
+}
+
+
+/* 2. 1279px~1024px 구간 레이아웃 */
+@media(min-width:1024px) and (max-width:1279px){
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+    height: 40px;
+  }
+  article{
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    height: 270px;
+  }
+
+
+
+
+
+
+   /* header h1(로고)크기 변경
+  그리고 위치 변경
+  (세로형 로고에서
+  가로형 로고로 변경함) */
+  header h1{
+
+    margin-left:0;
+    text-indent: -9999px;
+    position:absolute;
+    top: 20px;
+    left:20px;
+    width:200px;
+    height: 40px;
+    background-image: url('../img/logo2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* gnb부분을 h1밑으로 내린후에
+  flex하여 가로로 나열 */
+  header .gnb{
+    position:absolute;
+    top:20px;
+    right:200px;
+    display: flex;
+  }
+  .gnb li{
+  
+  }
+  /* 링크들의 display를 블록으로 만든뒤
+  패딩값을 주어 양방향을 떨어트림 
+  글자는 볼드하게 17px로 색은 #555로 설정*/
+  .gnb a{
+    display: block;
+    padding:8px 30px;
+    font-weight: bold;
+    font-size:17px;
+    color:#555;
+  }
+  /* 아이콘과 글자 간격설정 */
+  .gnb i{
+    margin-right: 15px;
+  }
+  
+  /* absolute지정 후에
+  아래로 끌어내리고
+  중앙에 맞추고자 */
+  .snsSet{
+    position: absolute;
+    bottom:20px;
+    width:90px;
+    height: 47px;
+    right:80px;
+    margin-right:-45px;
+  }
+  
+
+
+
+
+
+
+  .snsSet a{
+    float: left;
+  }
+  .snsSet img{
+  
+  }
+  nav{
+    position:relative;
+  
+  }
+  nav a{
+    position:absolute;
+    top:5px;
+  }
+  nav a:nth-child(1){
+    left:10px;
+  }
+  nav a:nth-child(2){
+    left:150px;
+  }
+  nav a:nth-child(3){
+    right:96px;
+  }
+  nav a:nth-child(4){
+    right:10px;
+  }
+  
+}
+
+
+
+/* 3. 1023px~780px 구간 레이아웃 */
+@media(min-width:780px) and (max-width:1023px){
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+
+  }
+
+
+
+
+
+
+
+  /* header h1(로고)크기 변경
+  그리고 위치 변경
+  (세로형 로고에서
+  가로형 로고로 변경함) */
+  header h1{
+
+    margin-left:0;
+    text-indent: -9999px;
+    position:absolute;
+    top: 20px;
+    left:20px;
+    width:200px;
+    height: 40px;
+    background-image: url('../img/logo2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* gnb부분을 h1밑으로 내린후에
+  flex하여 가로로 나열 */
+  header .gnb{
+    position:absolute;
+    top:20px;
+    right:10px;
+    display: flex;
+  }
+  .gnb li{
+  
+  }
+  /* 링크들의 display를 블록으로 만든뒤
+  패딩값을 주어 양방향을 떨어트림 
+  글자는 볼드하게 17px로 색은 #555로 설정*/
+  .gnb a{
+    display: block;
+    padding:10px 10px;
+    font-weight: bold;
+    font-size:17px;
+    color:#555;
+  }
+  /* 아이콘과 글자 간격설정 */
+  .gnb i{
+    margin-right: 15px;
+  }
+  
+  /* absolute지정 후에
+  아래로 끌어내리고
+  중앙에 맞추고자 */
+  .snsSet{
+    display: none;
+    position: absolute;
+    bottom:20px;
+    width:90px;
+    height: 47px;
+    right:80px;
+    margin-right:-45px;
+  }
+  
+
+
+
+
+
+
+
+
+  
+  .snsSet a{
+    float: left;
+  }
+  .snsSet img{
+  
+  }
+  nav{
+    position:relative;
+  
+  }
+  nav a{
+    position:absolute;
+    top:5px;
+  }
+  nav a:nth-child(1){
+    left:10px;
+  }
+  nav a:nth-child(2){
+    left:150px;
+  }
+  nav a:nth-child(3){
+    right:96px;
+  }
+  nav a:nth-child(4){
+    right:10px;
+  }
+  article{
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    height: 200px;
+  }
+  section:nth-child(1){
+    width: 100%;
+    height: 400px;
+  }
+  section:nth-child(2){
+    width:66.6666%;
+  }
+  section:nth-child(3){
+    width:33.3333%;
+  }
+  section:nth-child(4){
+    display: none;
+    width:25%;
+  }
+  section:nth-child(5){
+    width:33.3333%;
+  
+  }
+  section:nth-child(6){
+    width:66.6666%;
+  }
+  section:nth-child(7){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(8){
+    width:33.3333%;
+  }
+  section:nth-child(9){
+    width:33.3333%;
+  }
+  section:nth-child(10){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(11){
+    width:33.3333%;
+  }
+  section:nth-child(12){
+    display: none;
+    width:25%;
+  }
+}
+
+
+
+/* 4. 779px~640px 구간 레이아웃 */
+@media(min-width:640px) and (max-width:779px){
+   /* header h1(로고)크기 변경
+  그리고 위치 변경
+  (세로형 로고에서
+  가로형 로고로 변경함) */
+  header h1{
+
+    margin-left:0;
+    text-indent: -9999px;
+    position:absolute;
+    top: 20px;
+    left:20px;
+    width:200px;
+    height: 40px;
+    background-image: url('../img/logo2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* gnb부분을 h1밑으로 내린후에
+  flex하여 가로로 나열 */
+  header .gnb{
+    position:absolute;
+    top:20px;
+    right:10px;
+    display: flex;
+  }
+  .gnb li{
+  
+  }
+  /* 링크들의 display를 블록으로 만든뒤
+  패딩값을 주어 양방향을 떨어트림 
+  글자는 볼드하게 17px로 색은 #555로 설정*/
+  .gnb a{
+    display: block;
+    padding:10px 10px;
+    font-weight: bold;
+    font-size:17px;
+    color:#555;
+  }
+  /* 아이콘과 글자 간격설정 */
+  .gnb i{
+    margin-right: 15px;
+  }
+  
+  /* absolute지정 후에
+  아래로 끌어내리고
+  중앙에 맞추고자 */
+  .snsSet{
+    display: none;
+    position: absolute;
+    bottom:20px;
+    width:90px;
+    height: 47px;
+    right:80px;
+    margin-right:-45px;
+  }
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+    top:0;
+    left:0;
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+    height: 40px;
+  }
+  article{
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    height: 200px;
+  }
+  section:nth-child(1){
+    width: 100%;
+    height: 400px;
+  }
+  section:nth-child(2){
+    width:100%;
+  }
+  section:nth-child(3){
+    width:50%;
+  }
+  section:nth-child(4){
+    display: none;
+    width:25%;
+  }
+  section:nth-child(5){
+    width:50%;
+  
+  }
+  section:nth-child(6){
+    width:50%;
+  }
+  section:nth-child(7){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(8){
+    width:50%;
+  }
+  section:nth-child(9){
+    width:50%;
+  }
+  section:nth-child(10){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(11){
+    width:50%;
+  }
+  section:nth-child(12){
+    display: none;
+    width:25%;
+  }
+}
+
+
+
+/* 5. 639px~480px 구간 레이아웃 */
+@media(min-width:480px) and (max-width:639px){
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+    top:0;
+    left:0;
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+    height: 40px;
+    display: none;
+  }
+  article{
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    height: 140px;
+  }
+  section:nth-child(1){
+    width: 100%;
+    height: 280px;
+  }
+  section:nth-child(2){
+    width:100%;
+  }
+  section:nth-child(3){
+    width:50%;
+  }
+  section:nth-child(4){
+    display: none;
+    width:25%;
+  }
+  section:nth-child(5){
+    width:50%;
+  
+  }
+  section:nth-child(6){
+    width:50%;
+  }
+  section:nth-child(7){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(8){
+    width:50%;
+  }
+  section:nth-child(9){
+    width:50%;
+  }
+  section:nth-child(10){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(11){
+    width:50%;
+  }
+  section:nth-child(12){
+    display: none;
+    width:25%;
+  }
+
+
+
+
+   /* header h1(로고)크기 변경
+  그리고 위치 변경
+  (세로형 로고에서
+  가로형 로고로 변경함) */
+  header h1{
+    margin-left:auto;
+    margin-right:auto;
+    text-indent: -9999px;
+    position:relative;
+    top: 20px;
+    left:20px;
+    width:200px;
+    height: 40px;
+    background-image: url('../img/logo2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  /* gnb부분을 h1밑으로 내린후에
+  flex하여 가로로 나열 */
+  header .gnb{
+    position:relative;
+    top:20px;
+    right:10px;
+    display: flex;
+    width:100%;
+    margin-top:20px;
+  }
+  .gnb li{
+    width:25%;
+  }
+  /* 링크들의 display를 블록으로 만든뒤
+  패딩값을 주어 양방향을 떨어트림 
+  글자는 볼드하게 17px로 색은 #555로 설정*/
+  .gnb a{
+    text-align: center;
+    display: block;
+    padding:10px 10px;
+    font-weight: bold;
+    font-size:17px;
+    color:#555;
+  }
+  /* 아이콘과 글자 간격설정 */
+  .gnb i{
+    margin-right: 15px;
+  }
+  
+  /* absolute지정 후에
+  아래로 끌어내리고
+  중앙에 맞추고자 */
+  .snsSet{
+    display: none;
+    position: absolute;
+    bottom:20px;
+    width:90px;
+    height: 47px;
+    right:80px;
+    margin-right:-45px;
+  }
+}
+
+
+
+/* 6. 479px 이하 구간 레이아웃 */
+@media(max-width:479px){
+  header{
+    width:100%;
+    height: 80px;
+    position:relative;
+    top:0;
+    left:0;
+  }
+  nav{
+    width: 100%;
+    margin-left:0;
+    height: 40px;
+    display: none;
+  }
+  article{
+    height: 100%;
+    width: 100%;
+    margin-left:0;
+  }
+  section{
+    float:left;
+    height: 140px;
+    display: none;
+  }
+  section:nth-child(1){
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  section:nth-child(2){
+    width:100%;
+  }
+  section:nth-child(3){
+    width:50%;
+  }
+  section:nth-child(4){
+    display: none;
+    width:25%;
+  }
+  section:nth-child(5){
+    width:50%;
+  
+  }
+  section:nth-child(6){
+    width:50%;
+  }
+  section:nth-child(7){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(8){
+    width:50%;
+  }
+  section:nth-child(9){
+    width:50%;
+  }
+  section:nth-child(10){
+    display: none;
+    width:50%;
+  }
+  section:nth-child(11){
+    width:50%;
+  }
+  section:nth-child(12){
+    display: none;
+    width:25%;
+  }
+}
+
+
