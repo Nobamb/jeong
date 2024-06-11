@@ -533,6 +533,205 @@ section:nth-child(3){
   letter-spacing: -1px;
 }
 
+/* 네번째 섹션 설정 */
+
+
+section:nth-child(4){
+
+  background-image: url('img/summer_bean_bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  height: 400px;
+  padding:40px 0;
+
+}
+
+.summer_inner {
+
+  display: flex;
+  justify-content: center;
+  
+
+}
+.summer_inner .imgBox{
+
+  width:640px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.summer_inner .txtBox{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #7e5732;
+
+}
+
+.summer_inner .txtBox h4{
+
+  letter-spacing: -2px;
+  font-size: 18px;
+}
+.summer_inner .txtBox h2{
+
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  font-size: 24px;
+
+}
+.summer_inner .txtBox p{
+
+  letter-spacing: -2px;
+  font-size: 15px;
+  margin-bottom:20px;
+
+}
+.summer_inner .txtBox span{
+
+
+
+}
+.summer_inner .txtBox span a{
+
+  display: inline-block;
+  color: #7e5732;
+  padding: 8px 20px;
+  border: 1px solid #7e5732;
+  border-radius: 5px;
+  transition:0.5s all;
+  font-size: 14px;
+
+}
+
+.summer_inner .txtBox span a:hover{
+
+ text-decoration: underline;
+ background-color: #7e5732;
+ color:#fff;
+
+}
+
+
+
+
+/* 다섯번째 섹션 설정 */
+
+
+
+section:nth-child(5){
+
+
+  background-image: url('img/bali_bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  height: 300px;
+  padding:40px 0;
+
+}
+
+.bali_inner{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+
+.bali_inner .txtBox{
+  width:640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+
+}
+
+.bali_inner .txtBox span{
+
+}
+
+.bali_inner .txtBox span a{
+
+  border-radius: 5px;
+  display: block;
+  padding:8px 20px;
+  border: 1px solid #7e5732;
+  color:#7e5732;
+  transition:0.5s all;
+  margin-left:500px;
+
+}
+
+.bali_inner .txtBox span a:hover{
+
+  background-color: #7e5732;
+  color:#fff;
+  text-decoration: underline;
+
+
+}
+
+
+.bali_inner .txtBox img{
+
+
+  margin-left:500px;
+  margin-bottom:40px;
+
+}
+
+
+.bali_inner .imgBox{
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  width:40%;
+}
+
+.bali_inner .imgBox img{
+
+
+}
+
+
+
+/* 여섯번째 섹션 */
+
+
+section:nth-child(6){
+
+  background-image: url('img/2024_summer_pick_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 600px;
+  padding: 40px 0;
+  background-attachment: fixed;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 미디어쿼리 구간 설정 =======================================*/
@@ -543,7 +742,8 @@ section:nth-child(3){
 
 @media(min-width:1280px) {
 
-  .header_inner, .reward_inner {
+  .header_inner, .reward_inner, .summer_inner .bali_inner,
+  .pickup_inner{
 
     width: 1240px;
     margin: 0 auto;
