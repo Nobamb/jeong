@@ -135,7 +135,6 @@ header nav ul {
 header nav ul li {
 
   width: 16.6666%;
-  max-width: 160px;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -260,6 +259,8 @@ width: 170px;
   cursor: pointer;
 
 }
+
+
 
 /* 버튼에 그림자넣기 */
 
@@ -555,11 +556,36 @@ section .border {
 
 }
 
-.notice img {
+.notice .img {
 
   width: 100%;
+  height: 430px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.notice .notice1{
+
+  background-image: url('img/공지사항/공지1.png');
 
 }
+
+
+.notice .notice2{
+
+  background-image: url('img/공지사항/공지2.png');
+
+}
+
+
+.notice .notice3{
+
+  background-image: url('img/공지사항/공지3.png');
+
+}
+
+
 
 .notice h2 {
   align-items: center;
@@ -749,6 +775,7 @@ section .border {
 /* 전시관들 모두 .list안에 고정되어있으며 리스트 버튼 클릭시
 페이드 인/아웃이 진행되면서 각각의 사진들이 변경됨 */
 .hallarea .listBox .listimg {
+  width:100%;
   display: flex;
   gap: 30px;
   opacity: 0;
@@ -769,7 +796,9 @@ section .border {
 
 
 /* li부분은 사진1~2영역 */
-.hallarea .listimg li {}
+.hallarea .listimg li {
+  width:100%;
+}
 
 .hallarea .listimg a {
   
@@ -786,8 +815,7 @@ section .border {
 
 }
 
-.hallarea .listimg img {
-  display: block;
+.hallarea .listimg .img{
   filter:brightness(1.35);
   box-shadow: 20px 8px 10px 4px rgba(0, 0, 0, 25%);
   width: 100%;
@@ -798,7 +826,7 @@ section .border {
 .hallarea .listimg li:nth-child(1) {
   width:53.5%;
   max-width: 570px;
-
+  height: 440px;
   position: relative;
 
 }
@@ -806,14 +834,33 @@ section .border {
 .hallarea .listimg li:nth-child(1) a {
   display: block;
   width:100%;
-  
+  height: 100%;
 }
 
-.hallarea .listimg li:nth-child(1) a img {
-
-  display: block;
+.hallarea .listimg li:nth-child(1) a .hallImg1 {
+  background-position: center center;
+  height: 100%;
   width: 100%;
+  background-size: cover;
 }
+
+.hallarea .listimg li:nth-child(1) a .hallImg1.img1 {
+  background-image: url('img/무궁화전시관/1-1.jpeg');
+}
+
+.hallarea .listimg li:nth-child(1) a .hallImg1.img2 {
+  background-image: url('img/무궁화전시관/2-1.jpeg');
+}
+.hallarea .listimg li:nth-child(1) a .hallImg1.img3 {
+  background-image: url('img/무궁화전시관/3-1.jpeg');
+}
+.hallarea .listimg li:nth-child(1) a .hallImg1.img4 {
+  background-image: url('img/무궁화전시관/4-1.jpeg');
+}
+.hallarea .listimg li:nth-child(1) a .hallImg1.img5 {
+  background-image: url('img/무궁화전시관/5-1.jpeg');
+}
+
 
 .hallarea .listimg li:nth-child(1) div {
 
@@ -824,20 +871,45 @@ section .border {
 
 /* 사진2영역 */
 /* 사진2의 경우 아래로 위치해야되기에 margin-top으로 아래로 내림 */
-.hallarea .listBox .listimg li:nth-child(2) {
+
+.hallarea .listimg li:nth-child(2) {
   width:43.6%;
   max-width: 465px;
-
+  height: 320px;
   position: relative;
   margin-top: 175px;
 
 }
-
-.hallarea .listimg li:nth-child(2) img {
-
+.hallarea .listimg li:nth-child(2) a {
   display: block;
+  width:100%;
+  height: 100%;
+}
+
+.hallarea .listimg li:nth-child(2) a .hallImg2 {
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
   width: 100%;
 
+}
+
+.hallarea .listimg li:nth-child(2) a .hallImg2.img1 {
+  background-image: url('img/무궁화전시관/1-2.jpeg');
+}
+.hallarea .listimg li:nth-child(2) a .hallImg2.img2 {
+  
+  background-image: url('img/무궁화전시관/2-2.jpeg');
+
+}
+.hallarea .listimg li:nth-child(2) a .hallImg2.img3 {
+  background-image: url('img/무궁화전시관/3-2.jpeg');
+}
+.hallarea .listimg li:nth-child(2) a .hallImg2.img4 {
+  background-image: url('img/무궁화전시관/4-2.jpeg');
+}
+.hallarea .listimg li:nth-child(2) a .hallImg2.img5 {
+  background-image: url('img/무궁화전시관/5-2.jpeg');
 }
 
 
@@ -2100,6 +2172,8 @@ footer {
   height: 145px;
 }
 
+
+
 .footer1_inner>a img {
   display: block;
   height: 100%;
@@ -2122,6 +2196,15 @@ footer {
   color: #4797b1;
 
 }
+
+.footer1 .footerInfor span a{
+
+  font-weight: bold;
+  font-size: 16px;
+  color: #4797b1;
+
+}
+
 
 .footer1 .sns {
   height: 200px;
@@ -2295,14 +2378,12 @@ footer {
 
     margin:0 80px;
     width:100%;
-
-  }
-
-  header nav ul {
-
+    z-index: 10;
     max-width: 9999px;
-    justify-content: space-between;
+
   }
+
+
   
 
 /* 유틸리티 영역 */
