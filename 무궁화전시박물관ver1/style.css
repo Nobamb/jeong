@@ -1511,22 +1511,15 @@ section .border {
 /* 왼쪽 사진 영역 */
 .guide .imgEffect {
 
-  transform: translateX(-400px);
+
   max-width: 900px;
   width:70.3%;
 
   position: relative;
-  transition: all 1s;
-  opacity: 0;
-}
-
-
-.guide .imgEffect.on {
-
-  opacity: 1;
-  transform: translateX(0);
 
 }
+
+
 
 
 .guide .imgEffect img {
