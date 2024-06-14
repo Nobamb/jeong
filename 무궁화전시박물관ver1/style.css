@@ -1971,8 +1971,31 @@ api 부분 여기다 집어넣기 */
   display: flex;
   justify-content: center;
   align-items: center;
+  animation:icon 1s infinite alternate ease;
+}
+
+
+@keyframes icon {
+
+  0%{
+
+    transform:scale(1);
+
+  }
+
+
+  100%{
+
+    transform: scale(1.2);
+
+  }
 
 }
+
+
+
+
+
 
 .maparea .mapInfor .mapIconBorder .mapIcon i {
 
