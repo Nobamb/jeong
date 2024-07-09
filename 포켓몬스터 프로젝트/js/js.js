@@ -179,6 +179,83 @@ $(document).ready(function () {
 
       $('#sub_main').removeClass('on');
 
+      $('#login_main').removeClass('on');
+
+      $('#wrap').addClass('scrollevent');
+      $('#wrap').removeClass('off');
+
+
+
+      // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
+      // setinterval로 크기를 맞춤
+      let inter1 = setInterval(function () {
+
+        $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+        $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+      }, 100)
+
+
+      // 만약에 스크롤을 내리면 다시 풀림
+      $(window).scroll(function () {
+
+
+        if ($(window).scrollTop() > 0) {
+
+          clearInterval(inter1);
+
+        }
+
+      })
+
+
+
+      $('header').removeClass('on');
+      $('.mouseZone').fadeIn();
+
+    });
+
+
+
+  })
+
+
+
+  // 리뷰영역쪽 로그인에서 로그인창으로 이동
+
+
+  $('.review .review_list .write .login_btn').click(function (e) {
+
+    // 다른 링크로 이동하는 효과 없앰
+    // 현재페이지에서 이동할거이기에
+    e.preventDefault();
+
+    $('html,body').scrollTop(0);
+
+    $('#sub_main').removeClass('on');
+
+    // wrap의 off클래스 부여(display none)
+    // 서브페이지에 on클래스 부여(display block)
+    // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
+    $('#wrap').removeClass('scrollevent');
+    $('#wrap').addClass('off');
+    $('#login_main').addClass('on');
+
+
+
+    $('header').addClass('on');
+    $('.mouseZone').fadeOut();
+
+    // 로고 클릭시엔 원상복구
+    $('header h1').click(function (e) {
+
+      e.preventDefault();
+
+      $('html,body').scrollTop(0);
+
+      $('#sub_main').removeClass('on');
+
 
 
       $('#wrap').addClass('scrollevent');
@@ -857,7 +934,7 @@ $(document).ready(function () {
     }
 
 
-
+    // 두번째 리스트(게임)가 on일때
 
     if ($('.goods .gMenu .menu .mButtonzone:hover .mButton li:nth-child(2)').hasClass('on')) {
 
@@ -874,6 +951,10 @@ $(document).ready(function () {
 
 
     }
+
+
+
+
 
 
   })
@@ -921,13 +1002,11 @@ $(document).ready(function () {
 
 
 
-
-
-
   // 제품 리스트 버튼 클릭시 아래로 제품 종류들이 나오는 목록 나오게 하기
   // 제품 버튼에 있던 화살표도 움직이기
 
   $('.goods .gMenu .menu .mButtonzone').click(function () {
+
 
 
     $('.goods .gMenu .menu .mList').toggleClass('on');
@@ -939,6 +1018,14 @@ $(document).ready(function () {
 
 
   })
+
+
+
+
+
+
+
+
 
 
 
@@ -1192,7 +1279,6 @@ $(document).ready(function () {
 
     // 장바구니 담으면 장바구니를 담았다는 팝업창이 생겼다가 사라짐
 
-
     $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
@@ -1201,6 +1287,7 @@ $(document).ready(function () {
 
 
         $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
+
       })
 
     });
@@ -1231,7 +1318,7 @@ $(document).ready(function () {
 
 
 
-  // 서브페이지의 최상단 컨텐츠의 장바구니 버튼인데 위의 기능과 동일
+  // 서브페이지의 최상단 컨텐츠의 장바구니 버튼
 
   $('.sub .intro .infor .purchase_zone .purchase_button ul .shopping').click(function (e) {
 
@@ -1240,13 +1327,15 @@ $(document).ready(function () {
 
     shop++;
 
-
-    $('.shopping_popUp').css({ 'display': 'flex' });
+    $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
 
       $('.shopping_popUp').stop().animate({ 'opacity': 0, 'top': '52%' }, 300, function () {
-        $('.shopping_popUp').css({ 'display': 'none' });
+
+
+        $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
+
       })
 
     });
@@ -1284,7 +1373,7 @@ $(document).ready(function () {
 
 
 
-  // 서브페이지의 유사 컨텐츠의 장바구니 버튼인데 위의 기능과 동일
+  // 서브페이지의 유사 컨텐츠의 장바구니 버튼
 
 
 
@@ -1296,12 +1385,15 @@ $(document).ready(function () {
     shop++;
 
 
-    $('.shopping_popUp').css({ 'display': 'flex' });
+    $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
 
       $('.shopping_popUp').stop().animate({ 'opacity': 0, 'top': '52%' }, 300, function () {
-        $('.shopping_popUp').css({ 'display': 'none' });
+
+
+        $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
+
       })
 
     });
@@ -1568,7 +1660,7 @@ $(document).ready(function () {
           }
         }
       }
-    }, 999999), { passive: true });
+    }, 99999), { passive: true });
   });
 
 
@@ -1780,7 +1872,7 @@ $(document).ready(function () {
           }
         }
       }
-    }, 999999), { passive: true });
+    }, 99999), { passive: true });
 
 
 
@@ -2394,6 +2486,7 @@ $(document).ready(function () {
 
 
 
+// 서브 영역
 
 
 
@@ -2402,7 +2495,77 @@ $(document).ready(function () {
 
 
 
+  $('.sub .reviews .write .login_btn').click(function (e) {
 
+    // 다른 링크로 이동하는 효과 없앰
+    // 현재페이지에서 이동할거이기에
+    e.preventDefault();
+
+    $('html,body').scrollTop(0);
+
+    $('#sub_main').removeClass('on');
+
+    // wrap의 off클래스 부여(display none)
+    // 서브페이지에 on클래스 부여(display block)
+    // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
+    $('#wrap').removeClass('scrollevent');
+    $('#wrap').addClass('off');
+    $('#login_main').addClass('on');
+
+
+
+    $('header').addClass('on');
+    $('.mouseZone').fadeOut();
+
+    // 로고 클릭시엔 원상복구
+    $('header h1').click(function (e) {
+
+      e.preventDefault();
+
+      $('html,body').scrollTop(0);
+
+      $('#sub_main').removeClass('on');
+
+
+
+      $('#wrap').addClass('scrollevent');
+      $('#wrap').removeClass('off');
+
+
+
+      // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
+      // setinterval로 크기를 맞춤
+      let inter1 = setInterval(function () {
+
+        $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+        $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+      }, 100)
+
+
+      // 만약에 스크롤을 내리면 다시 풀림
+      $(window).scroll(function () {
+
+
+        if ($(window).scrollTop() > 0) {
+
+          clearInterval(inter1);
+
+        }
+
+      })
+
+
+
+      $('header').removeClass('on');
+      $('.mouseZone').fadeIn();
+
+    });
+
+
+
+  })
 
 
 

@@ -1345,25 +1345,44 @@ header .util li.shop a i .shop_number {
 
 /* 메뉴 목록창 */
 .goods .gMenu .menu .mList {
-
+  z-index: 10;
   margin: 10px;
   width: 210px;
   height: 135px;
   background-color: #fff;
   border-radius: 8px;
-  display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 25px;
   opacity: 0;
   transition: all 0.3s;
   transform: translateY(-20px);
+  position: relative;
 }
 
 .goods .gMenu .menu .mList.on {
   transform: translateY(0);
   opacity: 1;
 }
+
+/* 리스트가 opacity 0일때 리스트를 못건드리게 */
+
+.goods .gMenu .menu .mList .mList_hide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+
+.goods .gMenu .menu .mList.on .mList_hide {
+  display: none;
+}
+
+
+
 
 .goods .gMenu .menu .mList h4 {
   font-weight: normal;
@@ -2883,6 +2902,23 @@ none을 통해 사이를 막아둠 */
   opacity: 1;
 }
 
+/* 리스트가 opacity 0일때 리스트를 못건드리게 */
+
+.review .menu .mList .mList_hide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+
+.review .menu .mList.on .mList_hide {
+  display: none;
+}
+
+
 .review .menu .mList h4 {
 
   font-size: 13px;
@@ -3243,6 +3279,14 @@ none을 통해 사이를 막아둠 */
   height: 50%;
   font-size: 24px;
   color: #F5D022;
+}
+
+
+.review .review_list .review_all .about .star img{
+
+  width: 20px;
+  height: 20px;
+
 }
 
 
@@ -4359,6 +4403,14 @@ none을 통해 사이를 막아둠 */
   padding-right: 20px;
 }
 
+.sub .reviews .starmain .star_area img{
+
+  width: 20px;
+  height: 20px;
+}
+
+
+
 .sub .reviews .starmain span {
   padding-left: 20px;
   color: #fff;
@@ -4519,6 +4571,12 @@ none을 통해 사이를 막아둠 */
   height: 50%;
   font-size: 24px;
   color: #F5D022;
+}
+
+
+.sub .reviews .review_list .review_zone .about .star img{
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -5858,13 +5916,27 @@ footer {
 /* 징바구니에 담을 때 팝업 */
 
 
+/* 
+.shopping_popUp_main {
+
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: none;
+
+} */
+
+
 .shopping_popUp {
   z-index: -1;
   position: fixed;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 30%;
   height: 10%;
   background-color: #fff;
   border-radius: 10px;
