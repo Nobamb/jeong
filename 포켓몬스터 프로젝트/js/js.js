@@ -156,12 +156,16 @@ $(document).ready(function () {
 
     $('html,body').scrollTop(0);
 
+    $('#sub_main').removeClass('on');
+
     // wrap의 off클래스 부여(display none)
     // 서브페이지에 on클래스 부여(display block)
     // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
     $('#wrap').removeClass('scrollevent');
     $('#wrap').addClass('off');
     $('#login_main').addClass('on');
+
+
 
     $('header').addClass('on');
     $('.mouseZone').fadeOut();
@@ -173,10 +177,13 @@ $(document).ready(function () {
 
       $('html,body').scrollTop(0);
 
+      $('#sub_main').removeClass('on');
+
+
 
       $('#wrap').addClass('scrollevent');
       $('#wrap').removeClass('off');
-      $('#login_main').removeClass('on');
+
 
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
@@ -1038,6 +1045,11 @@ $(document).ready(function () {
     e.preventDefault();
 
     $('html,body').scrollTop(0);
+
+
+    // 로그인창 부분 display none
+    $('#login_main').removeClass('on');
+
 
 
     // wrap의 off클래스 부여(display none)
