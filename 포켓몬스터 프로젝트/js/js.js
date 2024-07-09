@@ -832,6 +832,8 @@ $(document).ready(function () {
 
 
 
+
+
     let slide = $(this).index();
 
     console.log(slide);
@@ -842,6 +844,8 @@ $(document).ready(function () {
 
       $('.hero .listBox').stop().animate({ 'left': `${slide * -100}%` }, 300);
 
+
+      heroCount = slide;
 
     }
 
