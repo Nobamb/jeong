@@ -188,7 +188,7 @@ $(document).ready(function () {
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter1 = setInterval(function () {
+      let inter1 = setInterval(function (e) {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
@@ -263,9 +263,12 @@ $(document).ready(function () {
 
 
 
+
+
+
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter1 = setInterval(function () {
+      let inter2 = setInterval(function (e) {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
@@ -280,7 +283,7 @@ $(document).ready(function () {
 
         if ($(window).scrollTop() > 0) {
 
-          clearInterval(inter1);
+          clearInterval(inter2);
 
         }
 
@@ -828,7 +831,10 @@ $(document).ready(function () {
   $('.hero .slidebar li').click(function () {
 
 
+
     let slide = $(this).index();
+
+    console.log(slide);
 
     if (slide !== 5) {
 
@@ -1134,8 +1140,6 @@ $(document).ready(function () {
     $('html,body').scrollTop(0);
 
 
-    // 로그인창 부분 display none
-    $('#login_main').removeClass('on');
 
 
 
@@ -1158,10 +1162,9 @@ $(document).ready(function () {
       $('html,body').scrollTop(0);
 
 
-
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter2 = setInterval(function () {
+      let inter3 = setInterval(function (e) {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
@@ -1176,7 +1179,7 @@ $(document).ready(function () {
 
         if ($(window).scrollTop() > 0) {
 
-          clearInterval(inter2);
+          clearInterval(inter3);
 
         }
 
@@ -1586,7 +1589,7 @@ $(document).ready(function () {
 
 
 
-  // 스크롤 이벤트2(렉은 거의 없고 동작도 가장 정상적이지만 9999를 넣어야 되기에 불안정할 수 있음)
+  // 스크롤 이벤트2(렉은 거의 없고 동작도 가장 정상적이지만 매우 높은 수를 넣어야 되기에 불안정할 수 있음)
 
 
 
@@ -1614,7 +1617,23 @@ $(document).ready(function () {
     // 총길이
     let fullYear = bottomYear - topYear;
 
+    // 윈도우 최상단에서 스크롤을 내렸는데 다른 li들이 바뀌게 될 때
+
+    // 무조건 첫번재 포켓몬만 보이게(오른쪽의 연도부분은 이상없지만 포켓몬 부분에서)
+    // 서브페이지나 로그인페이지를 갔다가 오면 다른 포켓몬으로 바뀌어 있는 버그 발생
+    if ($(window).scrollTop() < topYear) {
+
+      $('.years .yearsZone .gene li').removeClass('on');
+
+      $('.years .yearsZone .gene li').eq(0).addClass('on');
+
+
+    }
+
+
+
     window.addEventListener('wheel', throttle(function (e) {
+
       // 마우스를 내릴때
       if (e.deltaY > 0) {
         for (let ys = 0; ys < 9; ys++) {
@@ -1660,7 +1679,12 @@ $(document).ready(function () {
           }
         }
       }
+
+
+
     }, 99999), { passive: true });
+
+
   });
 
 
@@ -2486,7 +2510,7 @@ $(document).ready(function () {
 
 
 
-// 서브 영역
+  // 서브 영역
 
 
 
@@ -2535,7 +2559,7 @@ $(document).ready(function () {
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter1 = setInterval(function () {
+      let inter4 = setInterval(function () {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
@@ -2550,7 +2574,7 @@ $(document).ready(function () {
 
         if ($(window).scrollTop() > 0) {
 
-          clearInterval(inter1);
+          clearInterval(inter4);
 
         }
 
