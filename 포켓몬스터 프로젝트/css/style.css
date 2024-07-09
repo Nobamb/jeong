@@ -2511,14 +2511,14 @@ none을 통해 사이를 막아둠 */
 
 .notices .noticesZone>div .listZone ul li .txt h4 {
 
-  font-size: 20px;
+  font-size: 18px;
   font-weight: normal;
 }
 
 .notices .noticesZone>div .listZone ul li .txt p {
 
   padding: 1em 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
 }
 
@@ -5842,7 +5842,7 @@ footer {
 .popUp .closed i {
 
   color: #fff;
-  font-size: 24px;
+  font-size: 56px;
 
 }
 
