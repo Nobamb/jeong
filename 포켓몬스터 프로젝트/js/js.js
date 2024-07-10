@@ -11,8 +11,6 @@ $(document).ready(function () {
 
 
 
-
-
   // 데스크탑 사이즈 미리 지정
   const desktop = 1280;
 
@@ -163,6 +161,8 @@ $(document).ready(function () {
     $('#wrap').addClass('off');
     $('#login_main').addClass('on');
 
+    $('#sub_main').removeClass('on');
+
     $('header').addClass('on');
     $('.mouseZone').fadeOut();
 
@@ -216,7 +216,153 @@ $(document).ready(function () {
 
 
 
+  $('.review .review_list .write .login_btn').click(function(e){
+    // 다른 링크로 이동하는 효과 없앰
+       // 현재페이지에서 이동할거이기에
+       e.preventDefault();
+   
+       $('html,body').scrollTop(0);
+   
+       // wrap의 off클래스 부여(display none)
+       // 서브페이지에 on클래스 부여(display block)
+       // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
+       $('#wrap').removeClass('scrollevent');
+       $('#wrap').addClass('off');
+       $('#login_main').addClass('on');
+   
+       $('#sub_main').removeClass('on');
+   
+       $('header').addClass('on');
+       $('.mouseZone').fadeOut();
+   
+       // 로고 클릭시엔 원상복구
+       $('header h1').click(function (e) {
+   
+         e.preventDefault();
+   
+         $('html,body').scrollTop(0);
+   
+   
+         $('#wrap').addClass('scrollevent');
+         $('#wrap').removeClass('off');
+         $('#login_main').removeClass('on');
+   
+   
+         // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
+         // setinterval로 크기를 맞춤
+         let inter1 = setInterval(function () {
+   
+           $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+   
+           $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+   
+         }, 100)
+   
+   
+         // 만약에 스크롤을 내리면 다시 풀림
+         $(window).scroll(function () {
+   
+   
+           if ($(window).scrollTop() > 0) {
+   
+             clearInterval(inter1);
+   
+           }
+   
+         })
+   
+   
+   
+         $('header').removeClass('on');
+         $('.mouseZone').fadeIn();
+   
+       });
+   
+   
+   
+   
+   })
+   
 
+
+
+
+
+$('.sub .reviews .write .login_btn').click(function(e){
+ // 다른 링크로 이동하는 효과 없앰
+    // 현재페이지에서 이동할거이기에
+    e.preventDefault();
+
+    $('html,body').scrollTop(0);
+
+    // wrap의 off클래스 부여(display none)
+    // 서브페이지에 on클래스 부여(display block)
+    // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
+    $('#wrap').removeClass('scrollevent');
+    $('#wrap').addClass('off');
+    $('#login_main').addClass('on');
+
+    $('#sub_main').removeClass('on');
+
+    $('header').addClass('on');
+    $('.mouseZone').fadeOut();
+
+    // 로고 클릭시엔 원상복구
+    $('header h1').click(function (e) {
+
+      e.preventDefault();
+
+      $('html,body').scrollTop(0);
+
+
+      $('#wrap').addClass('scrollevent');
+      $('#wrap').removeClass('off');
+      $('#login_main').removeClass('on');
+
+
+      // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
+      // setinterval로 크기를 맞춤
+      let inter1 = setInterval(function () {
+
+        $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+        $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
+
+      }, 100)
+
+
+      // 만약에 스크롤을 내리면 다시 풀림
+      $(window).scroll(function () {
+
+
+        if ($(window).scrollTop() > 0) {
+
+          clearInterval(inter1);
+
+        }
+
+      })
+
+
+
+      $('header').removeClass('on');
+      $('.mouseZone').fadeIn();
+
+    });
+
+
+
+
+})
+
+
+
+
+
+
+
+
+  
 
 
 
