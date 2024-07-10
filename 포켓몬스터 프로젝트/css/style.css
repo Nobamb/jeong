@@ -5710,6 +5710,7 @@ footer {
   height: 55%;
   border-bottom: 1px dotted #E83E34;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -5735,9 +5736,10 @@ footer {
 
 .popUp .popUp_bg .payment_box .goods_all p span {
 
+  width: 25%;
   display: block;
   width: fit-content;
-
+  text-align: center;
 }
 
 
@@ -5745,12 +5747,12 @@ footer {
 
   color: #E83E34;
   font-size: 14px;
-
+  width: 40%;
 }
 
 
 .popUp .popUp_bg .payment_box .goods_all p span.number {
-
+  width: 10%;
   color: #58585B;
   font-size: 14px;
 
@@ -5824,7 +5826,7 @@ footer {
 
 .popUp .total_pay .txt {
   padding: 0 10px;
-  font-size: 12px;
+  font-size: 24px;
 
 }
 
@@ -5832,7 +5834,8 @@ footer {
 
 .popUp .total_pay .pay {
   padding: 0 10px;
-  font-size: 16px;
+  font-size: 28px;
+  font-weight: bold;
 
 }
 
@@ -5966,6 +5969,8 @@ footer {
   opacity: 0;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
+
+
 
 
 

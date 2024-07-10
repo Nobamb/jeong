@@ -181,24 +181,24 @@ $(document).ready(function () {
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter1 = setInterval(function(){
+      let inter1 = setInterval(function () {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
         $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
-      },100)
-      
+      }, 100)
+
 
       // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function(){
+      $(window).scroll(function () {
 
 
-      if($(window).scrollTop()>0){
+        if ($(window).scrollTop() > 0) {
 
-        clearInterval(inter1);
+          clearInterval(inter1);
 
-      }
+        }
 
       })
 
@@ -584,7 +584,7 @@ $(document).ready(function () {
     }
 
     // 첫번째 슬라이드 부분을 클릭시에
-    if(slide===0){
+    if (slide === 0) {
 
       // 왼쪽버튼 off
       $('.hero .buttonZone .prev').addClass('off');
@@ -595,7 +595,7 @@ $(document).ready(function () {
 
 
     // 마지막 슬라이드 부분을 클릭시에
-    else if(slide===4){
+    else if (slide === 4) {
 
       // 오른쪽버튼 off
       $('.hero .buttonZone .next').addClass('off');
@@ -605,9 +605,9 @@ $(document).ready(function () {
     }
 
     // 그 외의 슬라이드 부분 클릭시
-    else{
-     // 오른쪽버튼 활성화
-     $('.hero .buttonZone .next').removeClass('off');
+    else {
+      // 오른쪽버튼 활성화
+      $('.hero .buttonZone .next').removeClass('off');
       // 왼쪽버튼 활성화
       $('.hero .buttonZone .prev').removeClass('off');
 
@@ -865,18 +865,18 @@ $(document).ready(function () {
 
 
 
-  $('.goods .gList .listZone>li.on ul:nth-child(1)').mouseenter(function(){
+  $('.goods .gList .listZone>li ul:nth-child(1)').mouseenter(function () {
 
-    $(this).css({'animation-play-state':'paused'});
+    $(this).css({ 'animation-play-state': 'paused' });
 
-    $(this).next().css({'animation-play-state':'paused'});
+    $(this).next().css({ 'animation-play-state': 'paused' });
 
 
-    $(this).mouseleave(function(){
+    $(this).mouseleave(function () {
 
-      $(this).css({'animation' : 'list1 linear 30s infinite'});
+      $(this).css({ 'animation': 'list1 linear 30s infinite' });
 
-      $(this).next().css({'animation' : 'list2 linear 30s infinite'});
+      $(this).next().css({ 'animation': 'list2 linear 30s infinite' });
 
 
     })
@@ -885,18 +885,18 @@ $(document).ready(function () {
 
 
 
-  $('.goods .gList .listZone>li.on ul:nth-child(2)').mouseenter(function(){
+  $('.goods .gList .listZone>li ul:nth-child(2)').mouseenter(function () {
 
-    $(this).css({'animation-play-state':'paused'});
+    $(this).css({ 'animation-play-state': 'paused' });
 
-    $(this).prev().css({'animation-play-state':'paused'});
+    $(this).prev().css({ 'animation-play-state': 'paused' });
 
 
-    $(this).mouseleave(function(){
+    $(this).mouseleave(function () {
 
-      $(this).css({'animation' : 'list2 linear 30s infinite'});
+      $(this).css({ 'animation': 'list2 linear 30s infinite' });
 
-      $(this).prev().css({'animation' : 'list1 linear 30s infinite'});
+      $(this).prev().css({ 'animation': 'list1 linear 30s infinite' });
 
 
     })
@@ -947,24 +947,24 @@ $(document).ready(function () {
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter2 = setInterval(function(){
+      let inter2 = setInterval(function () {
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
         $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
-      },100)
-      
+      }, 100)
+
 
       // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function(){
+      $(window).scroll(function () {
 
 
-      if($(window).scrollTop()>0){
+        if ($(window).scrollTop() > 0) {
 
-        clearInterval(inter2);
+          clearInterval(inter2);
 
-      }
+        }
 
       })
 
@@ -1048,6 +1048,10 @@ $(document).ready(function () {
     }
 
   }, 1000);
+
+
+
+
 
 
   $('.goods .gList .listZone>li ul li a .shop').click(function (e) {
@@ -1203,6 +1207,217 @@ $(document).ready(function () {
 
 
   })
+
+
+
+  // 각 물건들 장바구니 클릭시 장바구니 팝업 리스트에 추가
+
+
+
+
+  // 팝업 리스트의 갯수에 활용할 변수 생성(초기값은 모두 0으로)
+
+
+
+  // 게임
+
+
+
+
+  let game1 = 0;
+  let game2 = 0;
+  let game3 = 0;
+  let game4 = 0;
+  let game5 = 0;
+
+
+  // 게임 가격(초기변수)
+  let gp1 = 0;
+  let gp2 = 0;
+  let gp3 = 0;
+  let gp4 = 0;
+  let gp5 = 0;
+
+
+
+  // 상품
+
+
+  let product1 = 0;
+  let product2 = 0;
+  let product3 = 0;
+  let product4 = 0;
+  let product5 = 0;
+
+
+  // 가격
+
+
+
+  let pp1 = 0;
+  let pp2 = 0;
+  let pp3 = 0;
+  let pp4 = 0;
+  let pp5 = 0;
+
+
+
+  // 팝업 리스트의 갯수에 따른 금액 변수 생성
+
+
+
+
+
+  function Update() {
+    gp1 = game1 * 129600;
+    gp2 = game2 * 69800;
+    gp3 = game3 * 30000;
+    gp4 = game4 * 64800;
+    gp5 = game5 * 69800;
+
+    pp1 = product1 * 800;
+    pp2= product2 * 9800;
+    pp3= product3 * 1800;
+    pp4= product4 * 37400;
+    pp5= product5 * 25000;
+  }
+
+
+
+
+
+
+
+
+
+  // 장바구니에 담았을 때
+
+  $('.goods .gList .listZone>.gameList ul li:nth-child(1) a .shop').click(function () {
+
+    // 이전 리스트는 제거하고
+
+    $(`.popUp .popUp_bg .payment_box`).find(`.popUp_game1${game1}`).hide();
+
+    // 수량을 추가하고
+
+    game1++;
+
+    Update();
+
+    // 리스트에 수량이 증가됨을 표시함
+
+    $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="popUp_game1${game1}"><span class="ch_goods">포켓몬스터 스칼렛・바이올렛 2종</span><span class="number">x${game1}</span><span class="price">${gp1}</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+
+  })
+
+
+
+
+
+  $('.goods .gList .listZone>li ul li:nth-child(2) a .shop').click(function () {
+
+    $(`.popUp .popUp_bg .payment_box`).find(`.popUp_game2${game2}`).hide();
+
+    // 수량을 추가하고
+
+    game2++;
+
+    Update();
+
+    // 리스트에 수량이 증가됨을 표시함
+
+    $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="popUp_game2${game2}"><span class="ch_goods">Pokémon LEGENDS 아르세우스</span><span class="number">x${game2}</span><span class="price">${gp2}</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+
+  })
+
+
+
+
+
+  $('.goods .gList .listZone>li ul li:nth-child(3) a .shop').click(function () {
+
+    $(`.popUp .popUp_bg .payment_box`).find(`.popUp_game3${game3}`).hide();
+
+    // 수량을 추가하고
+
+    game3++;
+
+    Update();
+
+    // 리스트에 수량이 증가됨을 표시함
+
+    $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="popUp_game3${game3}"><span class="ch_goods">스칼렛・바이올렛 DLC 제로의 비보</span><span class="number">x${game3}</span><span class="price">${gp3}</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+
+
+  })
+
+
+
+
+
+
+
+
+  $('.goods .gList .listZone>li ul li:nth-child(4) a .shop').click(function () {
+
+    $(`.popUp .popUp_bg .payment_box`).find(`.popUp_game4${game4}`).hide();
+
+    // 수량을 추가하고
+
+    game4++;
+
+    Update();
+
+    // 리스트에 수량이 증가됨을 표시함
+
+    $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="popUp_game4${game4}"><span class="ch_goods">포켓몬스터 돌아온 명탐정 피카츄</span><span class="number">x${game4}</span><span class="price">${gp4}</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+
+
+  })
+
+
+
+
+
+
+
+  $('.goods .gList .listZone>li ul li:nth-child(5) a .shop').click(function () {
+
+    $(`.popUp .popUp_bg .payment_box`).find(`.popUp_game5${game5}`).hide();
+
+    // 수량을 추가하고
+
+    game5++;
+
+    Update();
+
+    // 리스트에 수량이 증가됨을 표시함
+
+    $('.popUp .popUp_bg .payment_box .goods_all').append(`<p class ="popUp_game5${game5}"><span class="ch_goods">포켓몬스터 소드・실드</span><span class="number">x${game5}</span><span class="price">${gp5}</span><span class="cancel"><i class="fa-solid fa-x"></i></span></p>`);
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
