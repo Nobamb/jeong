@@ -5954,7 +5954,7 @@ footer {
 
 
 .shopping_popUp {
-  z-index: -1;
+  z-index: 1000;
   position: fixed;
   top: 52%;
   left: 50%;
