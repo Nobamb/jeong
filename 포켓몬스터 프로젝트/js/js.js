@@ -156,16 +156,12 @@ $(document).ready(function () {
 
     $('html,body').scrollTop(0);
 
-    $('#sub_main').removeClass('on');
-
     // wrap의 off클래스 부여(display none)
     // 서브페이지에 on클래스 부여(display block)
     // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
     $('#wrap').removeClass('scrollevent');
     $('#wrap').addClass('off');
     $('#login_main').addClass('on');
-
-
 
     $('header').addClass('on');
     $('.mouseZone').fadeOut();
@@ -177,115 +173,32 @@ $(document).ready(function () {
 
       $('html,body').scrollTop(0);
 
-      $('#sub_main').removeClass('on');
 
+      $('#wrap').addClass('scrollevent');
+      $('#wrap').removeClass('off');
       $('#login_main').removeClass('on');
 
-      $('#wrap').addClass('scrollevent');
-      $('#wrap').removeClass('off');
-
-
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter1 = setInterval(function (e) {
+      let inter1 = setInterval(function(){
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
         $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
-      }, 100)
-
-
-      // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function () {
-
-
-        if ($(window).scrollTop() > 0) {
-
-          clearInterval(inter1);
-
-        }
-
-      })
-
-
-
-      $('header').removeClass('on');
-      $('.mouseZone').fadeIn();
-
-    });
-
-
-
-  })
-
-
-
-  // 리뷰영역쪽 로그인에서 로그인창으로 이동
-
-
-  $('.review .review_list .write .login_btn').click(function (e) {
-
-    // 다른 링크로 이동하는 효과 없앰
-    // 현재페이지에서 이동할거이기에
-    e.preventDefault();
-
-    $('html,body').scrollTop(0);
-
-    $('#sub_main').removeClass('on');
-
-    // wrap의 off클래스 부여(display none)
-    // 서브페이지에 on클래스 부여(display block)
-    // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
-    $('#wrap').removeClass('scrollevent');
-    $('#wrap').addClass('off');
-    $('#login_main').addClass('on');
-
-
-
-    $('header').addClass('on');
-    $('.mouseZone').fadeOut();
-
-    // 로고 클릭시엔 원상복구
-    $('header h1').click(function (e) {
-
-      e.preventDefault();
-
-      $('html,body').scrollTop(0);
-
-      $('#sub_main').removeClass('on');
-
-
-
-      $('#wrap').addClass('scrollevent');
-      $('#wrap').removeClass('off');
-
-
-
-
-
-
-      // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
-      // setinterval로 크기를 맞춤
-      let inter2 = setInterval(function (e) {
-
-        $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
-
-        $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
-
-      }, 100)
-
+      },100)
+      
 
       // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function () {
+      $(window).scroll(function(){
 
 
-        if ($(window).scrollTop() > 0) {
+      if($(window).scrollTop()>0){
 
-          clearInterval(inter2);
+        clearInterval(inter1);
 
-        }
+      }
 
       })
 
@@ -576,178 +489,6 @@ $(document).ready(function () {
 
 
 
-  // 다른 코드로 구현할때까지 잠금(코드 구현 성공시 지워도 됨)
-
-  // 기본 히어로 값들은 left 100%, 첫번째만 left 0% 부여
-  // 자바스크립트로 나머지 이벤트를 구현하였기에 기본값도 자바스크립트로 부여
-  // $('.hero .listBox li').css({ 'left': `100%` });
-  // $('.hero .listBox li').eq(0).css({ 'left': `0%` });
-
-
-  // // hero 배경화면 변경
-
-  // // 이전버튼 클릭시
-  // $('.buttonZone .prev').click(function () {
-
-  //   // 히어로의 이전버튼에 대한 변수 생성(on되어있는 히어로이미지의 순서)
-
-  //   let now1 = $('.hero .listBox li.on').index();
-  //   let prev = $('.hero .listBox li.on').index() - 1;
-
-  //   if (prev <= 0) {
-
-  //     $(this).addClass('off');
-  //     $('.buttonZone .next').removeClass('off');
-
-  //   }
-
-  //   else if (prev >= 4) {
-
-  //     $(this).removeClass('off');
-  //     $('.buttonZone .next').addClass('off');
-  //     $('.hero .listBox li').removeClass('on');
-  //     $('.hero .listBox li').eq(prev).addClass('on');
-  //   }
-
-  //   else {
-  //     $(this).removeClass('off');
-  //     $('.buttonZone .next').removeClass('off');
-  //   }
-
-  //   // 1번째 슬라이드 이후이거나 마지막 슬라이드 까지일때
-  //   if (now1 > 0 && now1 <= 4) {
-  //     // left값을 늘릴수록 이전값으로 이동(100단위)
-  //     $('.hero .listBox li').eq(now1).stop().animate({ 'left': `100%` }, 500);
-  //     $('.hero .listBox li').eq(prev).stop().animate({ 'left': `0%` }, 500);
-  //     $('.hero .listBox li').removeClass('on');
-  //     $('.hero .listBox li').eq(prev).addClass('on');
-  //     $(`.hero .slidebar .slide`).animate({ 'left': `${prev * 20}%` });
-  //   }
-
-
-  // })
-
-
-  // // 다음버튼 클릭시
-  // $('.buttonZone .next').click(function () {
-  //   let now2 = $('.hero .listBox li.on').index();
-  //   // 히어로의 이전버튼에 대한 변수 생성(on되어있는 히어로이미지의 순서)
-  //   let next = $('.hero .listBox li.on').index() + 1;
-
-
-  //   if (next <= 0) {
-
-  //     $('.buttonZone .prev').addClass('off');
-  //     $(this).removeClass('off');
-  //     $('.hero .listBox li').removeClass('on');
-  //     $('.hero .listBox li').eq(next).addClass('on');
-  //   }
-
-  //   else if (next >= 4) {
-
-  //     $('.buttonZone .prev').removeClass('off');
-  //     $(this).addClass('off')
-
-  //   }
-
-  //   else {
-
-  //     $('.buttonZone .prev').removeClass('off');
-  //     $(this).removeClass('off');
-  //   }
-
-  //   // 마지막 슬라이드 이전이거나 첫번째 슬라이드 이후일때
-  //   if (now2 >= 0 && now2 < 4) {
-  //     // left값을 줄일수록 이후값으로 이동(100단위)
-  //     $('.hero .listBox li').eq(next).stop().animate({ 'left': `0%` }, 500);
-  //     $('.hero .listBox li').eq(now2).stop().animate({ 'left': `-100%` }, 500);
-  //     $('.hero .listBox li').removeClass('on');
-  //     $('.hero .listBox li').eq(next).addClass('on');
-  //     $(`.hero .slidebar .slide`).stop().animate({ 'left': `${next * 20}%` }, 500);
-  //   }
-
-  // })
-
-
-  // // 히어로의 슬라이드바의 리스트들(각 슬라이드 영역) 클릭신
-  // $('.hero .slidebar li').click(function () {
-  //   // 현재 누른 순서의 슬라이드바 리스트의 인덱스 추출
-  //   let sb = $(this).index();
-
-
-  //   // 메인슬라이드바를 제외한 영역을 눌렀을 때
-  //   if (sb != 5) {
-
-  //     // 메인슬라이드바가 움직이면서 이전과 다음 슬라이드 또한 이동함
-  //     $('.hero .slidebar .slide').stop().animate({ 'left': `${sb * 20}%` }, 500);
-  //     $('.hero .listBox li').eq(sb - 1).stop().animate({ 'left': `-100%` }, 500);
-  //     $('.hero .listBox li').eq(sb + 1).stop().animate({ 'left': `100%` }, 500);
-  //     $('.hero .listBox li').eq(sb).stop().animate({ 'left': `0%` }, 500);
-  //     $('.hero .listBox li').removeClass('on');
-  //     $('.hero .listBox li').eq(sb).addClass('on');
-
-
-  //     // 위의 코드 그대로 사용시 다른 hero 페이지 부분들도 보이는 버그가 있기에 
-  //     // 추후 수정해보기
-
-
-
-  //     //     if($('.hero .slidebar li').eq().index()>sb){
-
-  //     //     $('.hero .listBox li').stop().animate({ 'left': `100%` }, 500);
-
-  //     //     }
-
-
-
-  //     //     if($('.hero .slidebar li').eq().index()<sb){
-
-  //     //       $('.hero .listBox li').stop().animate({ 'left': `-100%` }, 500);
-
-  //     //       }
-
-  //     // 슬라이드로 이동했을 때 좌우 버튼들 이벤트
-  //     let prev2 = $('.hero .buttonZone .prev');
-  //     let next2 = $('.hero .buttonZone .next');
-
-  //     // 첫번째 히어로 페이지일때
-  //     if (sb <= 0) {
-
-  //       $(prev2).addClass('off');
-  //       $(next2).removeClass('off');
-
-  //     }
-
-  //     // 마지막 히어로 페이지일때
-  //     else if (sb >= 4) {
-
-  //       $(next2).addClass('off');
-  //       $(prev2).removeClass('off');
-
-  //     }
-
-  //     else {
-  //       $(prev2).removeClass('off');
-  //       $(next2).removeClass('off');
-
-  //     }
-
-
-
-  //   }
-
-
-
-
-  // })
-
-
-
-
-
-
-
-
 
 
 
@@ -831,12 +572,7 @@ $(document).ready(function () {
   $('.hero .slidebar li').click(function () {
 
 
-
-
-
     let slide = $(this).index();
-
-    console.log(slide);
 
     if (slide !== 5) {
 
@@ -845,12 +581,10 @@ $(document).ready(function () {
       $('.hero .listBox').stop().animate({ 'left': `${slide * -100}%` }, 300);
 
 
-      heroCount = slide;
-
     }
 
     // 첫번째 슬라이드 부분을 클릭시에
-    if (slide === 0) {
+    if(slide===0){
 
       // 왼쪽버튼 off
       $('.hero .buttonZone .prev').addClass('off');
@@ -861,7 +595,7 @@ $(document).ready(function () {
 
 
     // 마지막 슬라이드 부분을 클릭시에
-    else if (slide === 4) {
+    else if(slide===4){
 
       // 오른쪽버튼 off
       $('.hero .buttonZone .next').addClass('off');
@@ -871,9 +605,9 @@ $(document).ready(function () {
     }
 
     // 그 외의 슬라이드 부분 클릭시
-    else {
-      // 오른쪽버튼 활성화
-      $('.hero .buttonZone .next').removeClass('off');
+    else{
+     // 오른쪽버튼 활성화
+     $('.hero .buttonZone .next').removeClass('off');
       // 왼쪽버튼 활성화
       $('.hero .buttonZone .prev').removeClass('off');
 
@@ -944,7 +678,7 @@ $(document).ready(function () {
     }
 
 
-    // 두번째 리스트(게임)가 on일때
+
 
     if ($('.goods .gMenu .menu .mButtonzone:hover .mButton li:nth-child(2)').hasClass('on')) {
 
@@ -961,10 +695,6 @@ $(document).ready(function () {
 
 
     }
-
-
-
-
 
 
   })
@@ -1012,11 +742,13 @@ $(document).ready(function () {
 
 
 
+
+
+
   // 제품 리스트 버튼 클릭시 아래로 제품 종류들이 나오는 목록 나오게 하기
   // 제품 버튼에 있던 화살표도 움직이기
 
   $('.goods .gMenu .menu .mButtonzone').click(function () {
-
 
 
     $('.goods .gMenu .menu .mList').toggleClass('on');
@@ -1028,14 +760,6 @@ $(document).ready(function () {
 
 
   })
-
-
-
-
-
-
-
-
 
 
 
@@ -1133,6 +857,64 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+  $('.goods .gList .listZone>li.on ul:nth-child(1)').mouseenter(function(){
+
+    $(this).css({'animation-play-state':'paused'});
+
+    $(this).next().css({'animation-play-state':'paused'});
+
+
+    $(this).mouseleave(function(){
+
+      $(this).css({'animation' : 'list1 linear 30s infinite'});
+
+      $(this).next().css({'animation' : 'list2 linear 30s infinite'});
+
+
+    })
+
+  })
+
+
+
+  $('.goods .gList .listZone>li.on ul:nth-child(2)').mouseenter(function(){
+
+    $(this).css({'animation-play-state':'paused'});
+
+    $(this).prev().css({'animation-play-state':'paused'});
+
+
+    $(this).mouseleave(function(){
+
+      $(this).css({'animation' : 'list2 linear 30s infinite'});
+
+      $(this).prev().css({'animation' : 'list1 linear 30s infinite'});
+
+
+    })
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
   // 제품들 클릭시에 상세페이지 이동
 
   $('.goods .gList .listZone>li.on ul li').click(function (e) {
@@ -1142,9 +924,6 @@ $(document).ready(function () {
     e.preventDefault();
 
     $('html,body').scrollTop(0);
-
-
-
 
 
     // wrap의 off클래스 부여(display none)
@@ -1157,6 +936,7 @@ $(document).ready(function () {
     $('.mouseZone').fadeOut();
 
 
+
     // 로고 클릭시엔 원상복구
     $('header h1').click(function (e) {
 
@@ -1167,24 +947,24 @@ $(document).ready(function () {
 
       // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
       // setinterval로 크기를 맞춤
-      let inter3 = setInterval(function (e) {
+      let inter2 = setInterval(function(){
 
         $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
         $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
 
-      }, 100)
-
+      },100)
+      
 
       // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function () {
+      $(window).scroll(function(){
 
 
-        if ($(window).scrollTop() > 0) {
+      if($(window).scrollTop()>0){
 
-          clearInterval(inter3);
+        clearInterval(inter2);
 
-        }
+      }
 
       })
 
@@ -1285,6 +1065,7 @@ $(document).ready(function () {
 
     // 장바구니 담으면 장바구니를 담았다는 팝업창이 생겼다가 사라짐
 
+
     $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
@@ -1293,7 +1074,6 @@ $(document).ready(function () {
 
 
         $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
-
       })
 
     });
@@ -1324,7 +1104,7 @@ $(document).ready(function () {
 
 
 
-  // 서브페이지의 최상단 컨텐츠의 장바구니 버튼
+  // 서브페이지의 최상단 컨텐츠의 장바구니 버튼인데 위의 기능과 동일
 
   $('.sub .intro .infor .purchase_zone .purchase_button ul .shopping').click(function (e) {
 
@@ -1333,15 +1113,13 @@ $(document).ready(function () {
 
     shop++;
 
-    $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
+
+    $('.shopping_popUp').css({ 'display': 'flex' });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
 
       $('.shopping_popUp').stop().animate({ 'opacity': 0, 'top': '52%' }, 300, function () {
-
-
-        $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
-
+        $('.shopping_popUp').css({ 'display': 'none' });
       })
 
     });
@@ -1379,7 +1157,7 @@ $(document).ready(function () {
 
 
 
-  // 서브페이지의 유사 컨텐츠의 장바구니 버튼
+  // 서브페이지의 유사 컨텐츠의 장바구니 버튼인데 위의 기능과 동일
 
 
 
@@ -1391,15 +1169,12 @@ $(document).ready(function () {
     shop++;
 
 
-    $('.shopping_popUp').css({ 'display': 'flex', 'z-index': 1000 });
+    $('.shopping_popUp').css({ 'display': 'flex' });
 
     $('.shopping_popUp').stop().animate({ 'opacity': 1, 'top': '50%' }, 400, function () {
 
       $('.shopping_popUp').stop().animate({ 'opacity': 0, 'top': '52%' }, 300, function () {
-
-
-        $('.shopping_popUp').css({ 'display': 'none', 'z-index': -1 });
-
+        $('.shopping_popUp').css({ 'display': 'none' });
       })
 
     });
@@ -1460,7 +1235,7 @@ $(document).ready(function () {
 
 
 
-  $('.goods .gList .listZone>li').mouseenter(function () {
+  $('.goods .gList .listZone>li ul').mouseenter(function () {
 
 
 
@@ -1592,18 +1367,18 @@ $(document).ready(function () {
 
 
 
-  // 스크롤 이벤트2(렉은 거의 없고 동작도 가장 정상적이지만 매우 높은 수를 넣어야 되기에 불안정할 수 있음)
+  // 스크롤 이벤트2(렉은 거의 없고 동작도 가장 정상적이지만 9999를 넣어야 되기에 불안정할 수 있음)
 
 
 
   function throttle(callback, limit) {
-    let waiting = false;
+    let waiting = false; // Initially, we're not waiting
     return function () {
       if (!waiting) {
-        callback.apply(this, arguments);
-        waiting = true;
+        callback.apply(this, arguments); // Execute users function
+        waiting = true; // Prevent future invocations
         setTimeout(function () {
-          waiting = false;
+          waiting = false; // Allow future invocations
         }, limit);
       }
     };
@@ -1620,23 +1395,7 @@ $(document).ready(function () {
     // 총길이
     let fullYear = bottomYear - topYear;
 
-    // 윈도우 최상단에서 스크롤을 내렸는데 다른 li들이 바뀌게 될 때
-
-    // 무조건 첫번재 포켓몬만 보이게(오른쪽의 연도부분은 이상없지만 포켓몬 부분에서)
-    // 서브페이지나 로그인페이지를 갔다가 오면 다른 포켓몬으로 바뀌어 있는 버그 발생
-    if ($(window).scrollTop() < topYear) {
-
-      $('.years .yearsZone .gene li').removeClass('on');
-
-      $('.years .yearsZone .gene li').eq(0).addClass('on');
-
-
-    }
-
-
-
     window.addEventListener('wheel', throttle(function (e) {
-
       // 마우스를 내릴때
       if (e.deltaY > 0) {
         for (let ys = 0; ys < 9; ys++) {
@@ -1682,12 +1441,7 @@ $(document).ready(function () {
           }
         }
       }
-
-
-
-    }, 99999), { passive: true });
-
-
+    }, 999999), { passive: true });
   });
 
 
@@ -1899,7 +1653,7 @@ $(document).ready(function () {
           }
         }
       }
-    }, 99999), { passive: true });
+    }, 999999), { passive: true });
 
 
 
@@ -2513,7 +2267,6 @@ $(document).ready(function () {
 
 
 
-  // 서브 영역
 
 
 
@@ -2522,77 +2275,7 @@ $(document).ready(function () {
 
 
 
-  $('.sub .reviews .write .login_btn').click(function (e) {
 
-    // 다른 링크로 이동하는 효과 없앰
-    // 현재페이지에서 이동할거이기에
-    e.preventDefault();
-
-    $('html,body').scrollTop(0);
-
-    $('#sub_main').removeClass('on');
-
-    // wrap의 off클래스 부여(display none)
-    // 서브페이지에 on클래스 부여(display block)
-    // 그리고 scrollevent class를 제거하여 스크롤 이벤트가 발생하지 않게 함
-    $('#wrap').removeClass('scrollevent');
-    $('#wrap').addClass('off');
-    $('#login_main').addClass('on');
-
-
-
-    $('header').addClass('on');
-    $('.mouseZone').fadeOut();
-
-    // 로고 클릭시엔 원상복구
-    $('header h1').click(function (e) {
-
-      e.preventDefault();
-
-      $('html,body').scrollTop(0);
-
-      $('#sub_main').removeClass('on');
-
-
-
-      $('#wrap').addClass('scrollevent');
-      $('#wrap').removeClass('off');
-
-
-
-      // h1를 클릭해서 스크롤 탑으로 가게 되면 히어로크기가 윈도우 크기에 맞지 않기에
-      // setinterval로 크기를 맞춤
-      let inter4 = setInterval(function () {
-
-        $('.hero').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
-
-        $('.hero .listBox li').stop().animate({ 'height': $(window).height(), 'width': $(window).width(), 'top': '0', 'margin': 'none', 'border-radius': '0' }, 1000);
-
-      }, 100)
-
-
-      // 만약에 스크롤을 내리면 다시 풀림
-      $(window).scroll(function () {
-
-
-        if ($(window).scrollTop() > 0) {
-
-          clearInterval(inter4);
-
-        }
-
-      })
-
-
-
-      $('header').removeClass('on');
-      $('.mouseZone').fadeIn();
-
-    });
-
-
-
-  })
 
 
 

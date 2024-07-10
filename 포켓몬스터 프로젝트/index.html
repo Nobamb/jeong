@@ -6,25 +6,24 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/html; 
+  <meta http-equiv="Content-Type" content="text/css; 
 charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>포켓몬스터</title>
-  <!-- 약 40시간 진행 -->
+  <!-- 약 44시간 진행 -->
   <!-- css연결 -->
   <link rel="stylesheet" href="css/style.css">
-
   <link href="css/rating_simple.css" rel="stylesheet" type="text/css">
 
 
-
+ <!-- 깃허브및 서버연결용 버전정보입력하기 -->
+  <script src="js/jquery-2.1.1.min.js"></script>
   <!-- 제이쿼리 cdn 연결 -->
   <script src="https://code.jquery.com/jquery-latest.js"></script>
 
 
 
-  <!-- 깃허브및 서버연결용 버전정보입력하기 -->
-  <script src="js/jquery-2.1.1.min.js"></script>
+ 
   <!-- 제이쿼리 내부의 있는 스타일 정보를 가져오기 -->
   <script src="js/jquery-ui.min.js"></script>
   <!-- 이펙트 효과 연결하기 -->
@@ -349,7 +348,167 @@ charset=UTF-8">
               <li class="gameList on">
 
 
-                <ul>
+                <!-- 무한스크롤 구현을 위해 같은 리스트를 두개 구현 -->
+
+
+                <ul class="game_list1">
+
+                  <!-- 스칼렛 바이올렛 -->
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          스칼렛・바이올렛
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">69800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+                  <!-- 레전드 아르세우스 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          Pokémon <br>
+                          LEGENDS 아르세우스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">69800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                  <!-- 제로의 비보 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          스칼렛・바이올렛 DLC<br>
+                          제로의 비보
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">30000원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+
+                  <!-- 돌아온 명탐정 피카츄 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 돌아온<br>
+                          명탐정 피카츄
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">64800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+                  <!-- 소드 실드 -->
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬스터 <br>
+                          소드・실드
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">69800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+
+
+                <ul class="game_list2">
 
                   <!-- 스칼렛 바이올렛 -->
                   <li>
@@ -513,7 +672,152 @@ charset=UTF-8">
               <!-- 상품 -->
               <li class="proList">
 
-                <ul>
+                <ul class="pro_list1">
+
+
+
+                  <li>
+                    <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb1"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          얼려먹는 야쿠르트
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a>
+                  </li>
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb2"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬 콤푸차
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">9800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb3"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓몬빵
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">1800원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb4"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                          <span class="new up">new</span>
+                        </div>
+
+                        <p>
+                          포켓피스
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">37400원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+                  <li> <a href="">
+                      <div class="sumbnail_area">
+                        <div class="sumbnail sumb5"></div>
+                      </div>
+                      <div class="txt">
+
+                        <div class="upzone">
+                          <span class="popul up">인기</span>
+                        </div>
+
+                        <p>
+                          포켓몬 퍼펙트휩
+                        </p>
+
+
+                        <div class="downzone">
+                          <span class="price down">25000원</span>
+                          <span class="shop down"><i class="fa-solid fa-cart-shopping but"></i></span>
+                        </div>
+
+
+                      </div>
+                    </a></li>
+
+
+
+                </ul>
+
+
+                <ul class="pro_list2">
 
 
 

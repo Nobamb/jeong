@@ -725,36 +725,6 @@ header .util li.shop a i .shop_number {
 }
 
 
-.hero .txt {
-
-  font-size: 54px;
-  color: #E83E34;
-  margin-left: 80px;
-
-}
-
-.hero .txt a {
-  padding-top: 45px;
-  display: flex;
-  width: fit-content;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.hero .txt a span {
-  color: #e83e34;
-  font-size: 16px;
-  transition: all 0.5s;
-}
-
-.hero .txt a span:hover {
-
-  color: #F5D022;
-
-}
-
 
 
 
@@ -829,7 +799,7 @@ header .util li.shop a i .shop_number {
   position: absolute;
   right: 30px;
   bottom: 80px;
-  width: 100px;
+  width: 150px;
   height: 25px;
   display: flex;
   justify-content: space-between;
@@ -854,8 +824,8 @@ header .util li.shop a i .shop_number {
 
 .hero .buttonZone>div {
   cursor: pointer;
-  height: 100%;
-  width: 25px;
+  height: 50px;
+  width: 50px;
   background-color: #fff;
   position: relative;
   border-radius: 50%;
@@ -865,8 +835,9 @@ header .util li.shop a i .shop_number {
 
   background-color: #E83E34;
   width: 100%;
-  height: 12.5px;
+  height: 25px;
   position: absolute;
+  left: 0;
   top: 0;
   border-top-left-radius: 9999px;
   border-top-right-radius: 9999px;
@@ -885,7 +856,7 @@ header .util li.shop a i .shop_number {
 }
 
 .hero .buttonZone i {
-  font-size: 20px;
+  font-size: 32px;
   color: #58585B;
 }
 
@@ -1447,56 +1418,81 @@ header .util li.shop a i .shop_number {
   align-items: center;
 }
 
+
+
 /* 리스트 영역*/
 .goods .gList .listZone>li {
+
+  height: 100%;
+  width: 3500px;
   position: absolute;
   opacity: 0;
   z-index: 1;
   top: 0;
   /* 애니메이션 때문에 비활성화된 것은 멀리 보냄 */
   left: 9999px;
+  display: flex;
 }
 
 .goods .gList .listZone>li.on {
+  left: 0;
   z-index: 10;
   opacity: 1;
-  animation: list linear 30s infinite;
-  /* left: -100%; */
-}
-
-.goods .gList .listZone>li:hover {
-  animation-play-state: paused;
-}
-
-
-/* 다른 리스트를 건드리지 않기 위해
-none을 통해 사이를 막아둠 */
-
-
-.goods .gList .listZone>li.none {}
-
-
-
-
-
-
-
-.goods .gList .listZone>li.on:hover {
-
-  animation-play-state: paused;
+  /* animation: list linear 5s infinite; */
 }
 
 
 
-@keyframes list {
+
+
+
+
+
+
+
+
+.goods .gList .listZone>li ul {
+  position: absolute;
+  top: 0;
+  width: 1750px;
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+  gap: 30px;
+  animation: none;
+  left: 0;
+}
+
+
+
+
+.goods .gList .listZone>li.on ul:nth-child(1){
+
+  animation: list1 linear 30s infinite;
+}
+
+
+.goods .gList .listZone>li.on ul:nth-child(2){
+
+
+  animation: list2 linear 30s infinite;
+}
+
+
+
+
+/* 무한재생용 리스트 두개 */
+
+
+@keyframes list1 {
 
   0% {
 
-    left: 99%;
+    left: 0;
 
   }
 
-  99.99999% {
+  100% {
 
     /* 리스트의 총길이 */
     /* 개당 너비 320px + gap 30px 총 350px*/
@@ -1506,24 +1502,32 @@ none을 통해 사이를 막아둠 */
   }
 
 
-  100% {
+}
 
-    left: 99%;
+
+@keyframes list2 {
+
+  0% {
+
+    left: 1750px;
 
   }
 
+  100% {
+
+    /* 리스트의 총길이 */
+    /* 개당 너비 320px + gap 30px 총 350px*/
+    /* 350 * 5 = 1750px */
+    left: 0;
+
+  }
+
+
 }
 
 
 
 
-
-.goods .gList .listZone>li ul {
-  display: flex;
-  justify-content: space-between;
-  height: 500px;
-  gap: 30px;
-}
 
 
 
@@ -1543,6 +1547,22 @@ none을 통해 사이를 막아둠 */
   flex-direction: column;
   transition: all 0.3s;
 }
+
+/* 각각의 리스트들의 간격은 30px이기에 첫번째와 마지막 리스트에 */
+/* 절반의 간격을 각각 둠 */
+
+/* 무한 애니메이션을 자연스럽게 보이게하기 위한 수단 */
+.goods .gList .listZone>li ul li:first-child {
+  margin-left: 15px;
+}
+
+.goods .gList .listZone>li ul li:last-child {
+  margin-right: 15px;
+}
+
+
+
+
 
 .goods .gList .listZone>li ul li:hover {
   opacity: 1;
