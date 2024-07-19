@@ -290,6 +290,50 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // sns 이벤트
 
 
@@ -310,7 +354,7 @@ $(document).ready(function () {
 
 
 
-    $(`.sns .sns_all li:nth-child(${sns1+1}) .sns_txt h3`).addClass('on');
+    $(`.sns .sns_all li:nth-child(${sns1 + 1}) .sns_txt h3`).addClass('on');
 
 
   })
@@ -328,10 +372,117 @@ $(document).ready(function () {
 
 
 
-    $(`.sns .sns_all li:nth-child(${sns2+1}) .sns_txt h3`).removeClass('on');
+    $(`.sns .sns_all li:nth-child(${sns2 + 1}) .sns_txt h3`).removeClass('on');
 
 
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 필모그래피
+
+
+
+  // 필모그래피들의 기본 left값 지정
+
+
+  for (let filmo = 1; filmo <= 10; filmo++) {
+
+    $(`.filmo_inner .filmo_zone_${filmo}`).css({ 'left': `${(filmo - 1) * 100}%` })
+
+  }
+
+
+
+
+  // 카운트 값만큼 움직이게 함
+
+  let filmoCount = 0;
+
+
+
+  // 마우스 휠 이벤트를 사용하였을 때
+
+
+  $(window).mousewheel(function (e, x) {
+
+
+    if ($('nav ul>li:nth-child(3)').hasClass('on')) {
+
+
+      // 스크롤을 내렸을 때
+
+      if (x < 0) {
+
+        // 9미만일때(left -900px이 마지막 구간)
+        if (filmoCount < 9) {
+
+          // 카운트를 올린후 왼쪽으로 이동
+          filmoCount++;
+          $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
+        }
+
+      }
+
+      // 스크롤을 올렸을 때
+
+      if (x > 0) {
+        // 0 초과일때(left 0px이 첫번째 구간)
+        if (filmoCount > 0) {
+
+          // 카운트를 내린후 오쪽으로 이동
+          filmoCount--;
+          $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
+        }
+
+
+
+
+      }
+
+
+    }
+
+
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+
 
 
 
