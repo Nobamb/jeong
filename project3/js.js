@@ -257,7 +257,7 @@ $(document).ready(function () {
 
         $('section.intro').hide();
 
-        
+
         $('.main .record').addClass('on');
 
       })
@@ -290,6 +290,37 @@ $(document).ready(function () {
 
 
 
+  // sns 이벤트
+
+
+
+
+  // 아이콘이 도는 효과
+
+
+  $('.sns .sns_all li a').mouseenter(function () {
+
+    let sns = $(this).parent('li').index();
+
+    $('.sns .sns_all li .sns_app').removeClass('on');
+
+    $('.sns .sns_all li .sns_app').eq(sns).addClass('on');
+
+
+
+  })
+
+
+
+
+
+  $('.sns .sns_all li a').mouseleave(function () {
+
+
+    $('.sns .sns_all li .sns_app').removeClass('on');
+
+
+  })
 
 
 

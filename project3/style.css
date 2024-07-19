@@ -555,7 +555,7 @@ section.intro .intro_break {
 
 
 
-section.intro .intro_break img{
+section.intro .intro_break img {
 
   transform: translateZ(0);
   /* transform: scale(1); */
@@ -563,7 +563,7 @@ section.intro .intro_break img{
 }
 
 
-section.intro .intro_break.on img.on{
+section.intro .intro_break.on img.on {
   transform: translateZ(8000px);
   /* transform: scale(10); */
   opacity: 0;
@@ -696,7 +696,7 @@ section.profile {
 }
 
 
- 
+
 
 
 section.profile.on {
@@ -707,7 +707,7 @@ section.profile.on {
 
 
 
-section.profile>.profile_inner{
+section.profile>.profile_inner {
   width: calc(100% - 160px);
   height: 100%;
   display: flex;
@@ -721,7 +721,7 @@ section.profile>.profile_inner{
 /* 종이 배경 부분 */
 
 
-section.profile .paper_bg{
+section.profile .paper_bg {
 
 
   width: 1065px;
@@ -745,7 +745,7 @@ section.profile .paper_bg{
 /* 사진 테두리 전체설정 */
 
 
-section.profile .paper_bg .picture{
+section.profile .paper_bg .picture {
   position: absolute;
 
   background-color: #fff;
@@ -761,7 +761,7 @@ section.profile .paper_bg .picture{
 
 
 
-section.profile .paper_bg .picture:hover{
+section.profile .paper_bg .picture:hover {
   opacity: 1;
 }
 
@@ -774,7 +774,7 @@ section.profile .paper_bg .picture:hover{
 /* 첫번째 사진 설정 */
 
 
-section.profile .paper_bg .picture1{
+section.profile .paper_bg .picture1 {
 
 
   top: 30px;
@@ -798,7 +798,7 @@ section.profile .paper_bg .picture1{
 /* 첫번째 사진 내부 설정 */
 
 
-section.profile .paper_bg .picture1_box{
+section.profile .paper_bg .picture1_box {
 
   width: 85%;
   height: 85%;
@@ -811,7 +811,7 @@ section.profile .paper_bg .picture1_box{
 
 
 
-section.profile .paper_bg .about{
+section.profile .paper_bg .about {
 
   position: absolute;
   top: 30px;
@@ -823,7 +823,7 @@ section.profile .paper_bg .about{
 
 }
 
-section.profile .paper_bg .about h3{
+section.profile .paper_bg .about h3 {
 
   font-weight: 400;
   font-size: 24px;
@@ -832,7 +832,7 @@ section.profile .paper_bg .about h3{
 }
 
 
-section.profile .paper_bg .about p{
+section.profile .paper_bg .about p {
 
   line-height: 1.5em;
   font-size: 16px;
@@ -857,7 +857,7 @@ section.profile .paper_bg .about p{
 /* 메모지 설정 */
 
 
-section.profile .paper_bg .memo{
+section.profile .paper_bg .memo {
 
   z-index: 100;
   position: absolute;
@@ -878,7 +878,7 @@ section.profile .paper_bg .memo{
 /* 메모지 글 */
 
 
-section.profile .paper_bg .memo .memo_write{
+section.profile .paper_bg .memo .memo_write {
 
   z-index: 100;
   width: 100%;
@@ -896,7 +896,7 @@ section.profile .paper_bg .memo .memo_write{
 
 
 
-section.profile .paper_bg .memo .memo_write h4{
+section.profile .paper_bg .memo .memo_write h4 {
 
   font-weight: 400;
   font-size: 24px;
@@ -905,7 +905,7 @@ section.profile .paper_bg .memo .memo_write h4{
 }
 
 
-section.profile .paper_bg .memo .memo_write span{
+section.profile .paper_bg .memo .memo_write span {
 
 
   font-size: 16px;
@@ -922,9 +922,9 @@ section.profile .paper_bg .memo .memo_write span{
 
 /* 싸인 부분 */
 
-section.profile .paper_bg .sign{
+section.profile .paper_bg .sign {
 
-  
+
   width: 240px;
   height: 230px;
   position: absolute;
@@ -951,7 +951,7 @@ section.profile .paper_bg .sign{
 /* 두번째 사진 외부*/
 
 
-section.profile .paper_bg .picture2{
+section.profile .paper_bg .picture2 {
 
 
   top: 400px;
@@ -974,7 +974,7 @@ section.profile .paper_bg .picture2{
 /* 두번째 사진 내부*/
 
 
-section.profile .paper_bg .picture2_box{
+section.profile .paper_bg .picture2_box {
 
   width: 85%;
   height: 85%;
@@ -993,7 +993,7 @@ section.profile .paper_bg .picture2_box{
 
 
 
-section.profile .paper_bg .picture3{
+section.profile .paper_bg .picture3 {
 
 
   top: 250px;
@@ -1015,7 +1015,7 @@ section.profile .paper_bg .picture3{
 /* 세번째 사진 내부*/
 
 
-section.profile .paper_bg .picture3_box{
+section.profile .paper_bg .picture3_box {
 
   width: 85%;
   height: 85%;
@@ -1040,7 +1040,7 @@ section.profile .paper_bg .picture3_box{
 
 
 
-section.profile .paper_bg .picture4{
+section.profile .paper_bg .picture4 {
 
 
   top: 250px;
@@ -1067,7 +1067,7 @@ section.profile .paper_bg .picture4{
 /* 네번째 사진 내부*/
 
 
-section.profile .paper_bg .picture4_box{
+section.profile .paper_bg .picture4_box {
 
   width: 85%;
   height: 85%;
@@ -1092,7 +1092,7 @@ section.profile .paper_bg .picture4_box{
 
 
 
-section.profile .paper_bg .tmi{
+section.profile .paper_bg .tmi {
 
   position: absolute;
   bottom: 30px;
@@ -1104,7 +1104,7 @@ section.profile .paper_bg .tmi{
 
 }
 
-section.profile .paper_bg .tmi h3{
+section.profile .paper_bg .tmi h3 {
 
   font-weight: 400;
   font-size: 24px;
@@ -1113,7 +1113,7 @@ section.profile .paper_bg .tmi h3{
 }
 
 
-section.profile .paper_bg .tmi p{
+section.profile .paper_bg .tmi p {
 
   line-height: 1.5em;
   font-size: 16px;
@@ -1180,66 +1180,24 @@ section.wrap {
 
 
 
-article {
+section.wrap article {
   width: 100vw;
   height: 100vh;
-
-}
-
-
-article:nth-child(1) {
-
   background-color: #E4E4E6;
-
-
-}
-
-article:nth-child(2) {
-
-  background-color: green;
-
-
-
-}
-
-article:nth-child(3) {
-
-  background-color: yellow;
-
-
-
-}
-
-article:nth-child(4) {
-
-
-
-
-  background-color: pink;
-
-}
-
-article:nth-child(5) {
-
-
-
-
-  background-color: purple;
-
 }
 
 
 
 
 
-.main{
+.main {
 
   position: relative;
 
 }
 
 
-.main .record{
+.main .record {
 
   display: block;
   width: 300px;
@@ -1253,7 +1211,7 @@ article:nth-child(5) {
 }
 
 
-.main .record.on{
+.main .record.on {
 
   transform: translateX(-50%);
 
@@ -1295,6 +1253,213 @@ article:nth-child(5) {
 
 
 
+
+
+
+
+
+
+
+
+
+/* sns 영역 */
+
+
+
+
+
+
+/* sns 나열한 부분 */
+
+
+.sns .sns_all {
+
+  width: 80%;
+  margin: 0 auto;
+  height: 400px;
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+}
+
+
+/* 각 sns */
+
+.sns .sns_all li {
+
+  position: relative;
+  width: 33.3333%;
+  height: 100%;
+  perspective: 2400px;
+}
+
+
+
+.sns .sns_all li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+
+
+/* sns 상징 이미지 */
+
+
+
+
+.sns .sns_all li a .img{
+  transform: scale(1);
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.5;
+
+}
+
+
+
+/* 호버하면 투명도가 바뀌면서 사진이 확대됨 */
+
+.sns .sns_all li a:hover .img{
+
+
+  opacity: 1;
+  transform: scale(1.2);
+
+}
+
+
+
+
+/* 사진 영역에 들어갈 사진들 */
+
+
+
+.sns .sns_all li:nth-child(1) .img{
+
+  background-image: url('img/sns1.png');
+
+}
+
+
+.sns .sns_all li:nth-child(2) .img{
+
+  background-image: url('img/sns2.png');
+
+}
+
+
+.sns .sns_all li:nth-child(3) .img{
+
+  background-image: url('img/sns3.png');
+
+}
+
+
+
+
+
+
+
+
+.sns .sns_all li .sns_app{
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotateY(0deg);
+  transform-origin: center center;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+
+
+
+.sns .sns_all li .sns_app.on{
+
+  transform: translate(-50%, 50%) rotateY(360deg);
+
+}
+
+
+
+
+
+.sns .sns_all li .sns_app.youtube{
+
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.youtube i{
+
+  color: #ff0000;
+  font-size: 64px;
+}
+
+
+
+
+
+
+.sns .sns_all li .sns_app.instagram{
+
+  background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(225,48,108,1) 50%, rgba(255,220,128,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.instagram i{
+
+  color: #fff;
+  font-size: 64px;
+}
+
+
+
+
+.sns .sns_all li .sns_app.facebook{
+
+  background-color: #1877F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.sns .sns_all li .sns_app.facebook i{
+
+  color: #fff;
+  font-size: 64px;
+}
+
+
+.sns .sns_all li .sns_youtube_txt{
+
+
+
+}
 
 
 
