@@ -1,0 +1,827 @@
+/* 언어설정 */
+
+
+@charset 'utf-8';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 기본설정 */
+
+
+
+* {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+
+ul {
+
+  list-style: none;
+
+}
+
+
+
+a {
+
+  text-decoration: none;
+  color: #fff;
+
+}
+
+
+img {
+
+  vertical-align: bottom;
+
+}
+
+/* 글꼴 설정 */
+
+/* 프로필에서는 nanum pen 사용 */
+
+/*   font-family: "Nanum Pen Script", cursive; */
+
+
+body {
+
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+
+}
+
+
+
+
+
+
+
+/* 전체 설정 */
+
+
+
+
+
+
+/* 인트로 설정 */
+
+section.intro {
+
+  z-index: 9999;
+
+  width: 100%;
+
+
+  height: 100%;
+
+}
+
+
+
+/* 로고 및 메뉴 설정 */
+
+
+
+
+
+
+
+
+h1,
+nav {
+  position: fixed;
+
+  top: 0;
+  height: 150px;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+
+
+
+/* 로고 */
+
+h1 {
+
+
+  width: 80px;
+  opacity: 0.5;
+  left: 0;
+  transition: all 0.7s;
+}
+
+
+h1>span {
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+h1>span>img {
+
+  width: 60%;
+
+}
+
+
+
+h1 .time {
+
+  background-color: #fff;
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -400px;
+  z-index: -1;
+  transition: all 0.7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+
+h1:hover {
+
+  opacity: 1;
+
+}
+
+
+
+h1:hover .time {
+
+  left: 0;
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
+/* 메뉴창 */
+
+nav {
+
+  opacity: 0.5;
+  right: -80px;
+  width: 160px;
+
+  justify-content: space-between;
+  transition: all 0.5s;
+
+}
+
+nav.on {
+
+  opacity: 1;
+  right: 0;
+
+}
+
+
+
+nav>span {
+
+  width: 50%;
+  height: 100%;
+  background-color: #E4E4E6;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+
+  border-bottom-left-radius: 20px;
+
+  /* 화살표 회전 */
+  perspective: 900px;
+
+}
+
+nav>span>i {
+  color: #606060;
+  font-size: 64px;
+  transform: rotateY(0deg);
+  transition: all 0.5s;
+
+}
+
+
+
+nav.on>span>i {
+
+  transform: rotateY(180deg);
+
+}
+
+
+
+nav>.menu_bar {
+
+  background-color: #606060;
+  height: 100vh;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+nav ul {
+
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+nav ul>li {
+
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+
+}
+
+
+
+
+nav ul>li>.menu_txt {
+
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 0px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  /* 메뉴창이 닫혔을때 */
+  opacity: 0;
+
+}
+
+/* 메뉴창이 열려있고, 리스트에 호버했을 때 투명도 해제 */
+
+nav.on ul>li:hover>.menu_txt {
+  width: 230px;
+  opacity: 1;
+
+
+}
+
+
+
+
+
+/* 메뉴창이 열려있고, 현재 리스트일때 투명도 해제 */
+
+nav.on ul>li.on>.menu_txt {
+
+
+  width: 230px;
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
+nav ul>li>.menu_txt>span {
+
+  color: #fff;
+  font-size: 20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* section 설정 */
+
+
+
+
+
+/* 인트로 */
+
+section.intro {
+  background-color: #E4E4E6;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  height: 100%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+section.intro .intro_area {
+
+  position: absolute;
+  background-image: url('img/roading/roading_bg.png');
+  background-size: cover;
+  background-position: center center;
+  width: 1440px;
+  height: 1024px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+section.intro .signiture {
+
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1000;
+}
+
+
+section.intro .signiture li {
+
+  position: absolute;
+  top: -100%;
+  height: 100%;
+  width: 100%;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+section.intro .signiture li:nth-child(1) {
+
+  top: 0;
+
+}
+
+
+
+section.intro .signiture li img {
+  display: block;
+  height: 100%;
+
+}
+
+
+
+
+
+section.intro .intro_area span {
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 32px;
+
+}
+
+
+/* 로딩이 100 이상이 될 시에 */
+
+section.intro .intro_area span.off {
+
+  color: red;
+
+}
+
+
+
+
+
+
+
+
+
+section.intro .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+}
+
+
+section.intro .niddle {
+  z-index: 10;
+  height: 10%;
+  position: absolute;
+  right: 50%;
+  top: 30%;
+  animation: 1s ani1 linear;
+  transform-origin: right bottom;
+  transform: rotate(0deg);
+}
+
+
+
+/* 자르는 연출 */
+
+section.intro .slush {
+
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #606060;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+
+
+
+
+section.intro .slush.on {
+
+  display: block;
+
+}
+
+
+
+section.intro .slush>img {
+
+
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+}
+
+
+section.intro .slush>img:nth-child(1) {
+
+  left: 40%;
+  top: 40%;
+
+}
+
+
+section.intro .slush>img:nth-child(2) {
+
+  left: 40%;
+  top: 50%;
+
+
+}
+
+
+
+
+
+
+
+section.intro .intro_break {
+
+  position: absolute;
+  width: 1440px;
+  height: 1024px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  perspective: 2300px;
+
+}
+
+
+
+section.intro .intro_break img{
+
+  transform: translateZ(0);
+  /* transform: scale(1); */
+  opacity: 1;
+}
+
+
+section.intro .intro_break.on img.on{
+  transform: translateZ(8000px);
+  /* transform: scale(10); */
+  opacity: 0;
+
+}
+
+
+
+
+section.intro .intro_break img:nth-child(1) {
+
+  width: 1126px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+
+}
+
+
+
+
+
+
+
+
+section.intro .intro_break img:nth-child(2) {
+
+  height: 1024px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 1s 0.2s;
+
+}
+
+
+section.intro .intro_break img:nth-child(3) {
+
+  width: 842px;
+  position: absolute;
+  bottom: 0;
+  left: 382px;
+  transition: all 1s 0.4s;
+
+}
+
+section.intro .intro_break img:nth-child(4) {
+
+  height: 920px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 1s 0.6s;
+
+}
+
+
+section.intro .intro_break.on {
+
+
+  display: block;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 프로필 */
+
+
+
+
+section.profile {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1500;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  transition: all 1s;
+  transform: scale(0);
+
+
+}
+
+
+
+section.profile.on {
+
+  transform: scale(1);
+
+}
+
+
+
+
+
+
+
+
+section.wrap {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 600vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+
+
+
+article {
+  width: 100vw;
+  height: 100vh;
+
+}
+
+
+article:nth-child(1) {
+
+  background-color: silver;
+
+
+}
+
+article:nth-child(2) {
+
+  background-color: green;
+
+
+
+}
+
+article:nth-child(3) {
+
+  background-color: yellow;
+
+
+
+}
+
+article:nth-child(4) {
+
+
+
+
+  background-color: pink;
+
+}
+
+article:nth-child(5) {
+
+
+
+
+  background-color: purple;
+
+}
+
+
+
+
+
+.main{
+
+  position: relative;
+
+}
+
+
+.main .record{
+
+  display: block;
+  width: 300px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+
+
+}
+
+
+.main .record.on{
+
+  transform: translateX(-50%);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 설정 */
+
+
+@media(min-width:1281px) {
+
+  .inner {
+
+    width: 1280px;
+    margin: 0 auto;
+
+  }
+
+}
