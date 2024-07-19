@@ -652,7 +652,28 @@ section.intro .intro_break.on {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 프로필 */
+
+
+
 
 
 
@@ -697,13 +718,18 @@ section.profile>.profile_inner{
 
 
 
+/* 종이 배경 부분 */
+
 
 section.profile .paper_bg{
 
 
-  width: 80%;
+  width: 1065px;
+
 
   height: 100%;
+
+  max-height: 1024px;
 
   background-image: url('img/paper.jpg');
 
@@ -716,11 +742,40 @@ section.profile .paper_bg{
 
 
 
+/* 사진 테두리 전체설정 */
+
+
+section.profile .paper_bg .picture{
+  position: absolute;
+
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0.5;
+  transition: all 0.5s;
+}
+
+
+
+
+
+section.profile .paper_bg .picture:hover{
+  opacity: 1;
+}
+
+
+
+
+
+
+
+/* 첫번째 사진 설정 */
 
 
 section.profile .paper_bg .picture1{
 
-  position: absolute;
 
   top: 30px;
 
@@ -730,17 +785,17 @@ section.profile .paper_bg .picture1{
 
   height: 250px;
 
-  background-color: #fff;
+
 
   transform: rotate(-15deg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
 
 
 }
 
+
+
+/* 첫번째 사진 내부 설정 */
 
 
 section.profile .paper_bg .picture1_box{
@@ -756,36 +811,71 @@ section.profile .paper_bg .picture1_box{
 
 
 
+section.profile .paper_bg .about{
+
+  position: absolute;
+  top: 30px;
+  left: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+section.profile .paper_bg .about h3{
+
+  font-weight: 400;
+  font-size: 24px;
+  padding-bottom: 10px;
+
+}
+
+
+section.profile .paper_bg .about p{
+
+  line-height: 1.5em;
+  font-size: 16px;
+
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메모지 설정 */
 
 
 section.profile .paper_bg .memo{
 
-
+  z-index: 100;
   position: absolute;
 
   top: 250px;
   left: 0;
 
-
   width: 250px;
+  height: 200px;
+
+  background-image: url('img/memo.png');
+  background-size: cover;
 
 }
 
 
 
-section.profile .paper_bg .memo img{
-
-
-  width: 100%;
-
-
-}
-
-
+/* 메모지 글 */
 
 
 section.profile .paper_bg .memo .memo_write{
@@ -806,6 +896,186 @@ section.profile .paper_bg .memo .memo_write{
 
 
 
+section.profile .paper_bg .memo .memo_write h4{
+
+  font-weight: 400;
+  font-size: 24px;
+
+
+}
+
+
+section.profile .paper_bg .memo .memo_write span{
+
+
+  font-size: 16px;
+
+  padding-top: 15px;
+
+
+}
+
+
+
+
+
+
+/* 싸인 부분 */
+
+section.profile .paper_bg .sign{
+
+  
+  width: 240px;
+  height: 230px;
+  position: absolute;
+  left: 300px;
+  top: 250px;
+  background-image: url('img/sign.png');
+  background-size: cover;
+  background-position: center center;
+  transform: rotate(30deg);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 두번째 사진 외부*/
+
+
+section.profile .paper_bg .picture2{
+
+
+  top: 400px;
+
+  left: 0;
+
+  width: 350px;
+
+  height: 300px;
+
+
+
+  transform: rotate(15deg);
+
+
+
+}
+
+
+/* 두번째 사진 내부*/
+
+
+section.profile .paper_bg .picture2_box{
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/profile_hanyohan.png');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+
+
+
+/* 세번째 사진 외부*/
+
+
+
+
+section.profile .paper_bg .picture3{
+
+
+  top: 250px;
+
+  right: 150px;
+
+  width: 150px;
+
+  height: 205px;
+
+
+
+  transform: rotate(0);
+
+
+
+}
+
+/* 세번째 사진 내부*/
+
+
+section.profile .paper_bg .picture3_box{
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/active/activity1.jpg');
+  background-size: cover;
+  background-position: center center;
+
+}
+
+
+
+
+
+
+
+
+
+/* 네번째 사진 외부*/
+
+
+
+
+
+
+section.profile .paper_bg .picture4{
+
+
+  top: 250px;
+
+  right: 0px;
+
+  width: 150px;
+
+  height: 205px;
+
+
+
+  transform: rotate(15deg);
+
+
+
+}
+
+
+
+
+
+
+/* 네번째 사진 내부*/
+
+
+section.profile .paper_bg .picture4_box{
+
+  width: 85%;
+  height: 85%;
+  background-image: url('img/hanyohan0.png');
+  background-size: cover;
+  background-position: center center;
+
+}
 
 
 
@@ -818,11 +1088,37 @@ section.profile .paper_bg .memo .memo_write{
 
 
 
+/* tmi 글 */
 
 
 
+section.profile .paper_bg .tmi{
+
+  position: absolute;
+  bottom: 30px;
+  right: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+section.profile .paper_bg .tmi h3{
+
+  font-weight: 400;
+  font-size: 24px;
+  padding-bottom: 10px;
+
+}
 
 
+section.profile .paper_bg .tmi p{
+
+  line-height: 1.5em;
+  font-size: 16px;
+
+}
 
 
 
