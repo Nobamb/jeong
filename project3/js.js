@@ -258,12 +258,113 @@ $(document).ready(function () {
         $('section.intro').hide();
 
 
-        $('.main .record').addClass('on');
+        $('.main .record_box').addClass('on');
 
       })
 
     }
   }, 300);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 레코드에 마우스를 올려두면
+
+
+$('.main .record_box .record').mouseenter(function () {
+
+
+  // 레코드 내의 박스가 오른쪽으로 나옴
+
+  $('.main .record_box .music_box').addClass('on');
+
+
+  // 마우스를 떼면(레코드 박스의 영역을 포함한 부모 영역)
+
+  $('.main .record_box').mouseleave(function () {
+
+    // 레코드 내의 박스가 다시 들어감
+    $('.main .record_box .music_box').removeClass('on');
+
+  })
+
+
+})
+
+
+
+
+
+
+$('.main .record_box .music_box>ul>li').click(function(){
+
+
+  $('.main .record_box .music_box>ul>li').removeClass('on');
+
+
+  $(this).addClass('on');
+
+
+  let music_text = $(this).text();
+
+
+  $('.main .record_box .player>.play_this').text(music_text);
+
+})
+
+
+
+$('.main .record_box .player>.play').click(function(){
+
+  $('.main .record_box .player>.play i').toggleClass('on');
+
+})
+
+
+
+setInterval(()=>{
+
+
+  if($('.main .record_box .player>.play .fa-play').hasClass('on')){
+
+    $('.main .record_box .record').css({'animation-play-state' : 'paused'});
+
+  }
+
+  else{
+
+    $('.main .record_box .record').css({'animation-play-state' : 'running'});
+
+  }
+
+
+},300)
+
 
 
 
@@ -354,9 +455,6 @@ $(document).ready(function () {
 
 
 
-    $(`.sns .sns_all li:nth-child(${sns1 + 1}) .sns_txt h3`).addClass('on');
-
-
   })
 
 
@@ -368,11 +466,6 @@ $(document).ready(function () {
     let sns2 = $(this).parent('li').index();
 
     $('.sns .sns_all li .sns_app').removeClass('on');
-
-
-
-
-    $(`.sns .sns_all li:nth-child(${sns2 + 1}) .sns_txt h3`).removeClass('on');
 
 
   })
