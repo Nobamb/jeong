@@ -444,6 +444,9 @@ $(document).ready(function () {
 
           // 카운트를 올린후 왼쪽으로 이동
           filmoCount++;
+
+
+          
           $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
         }
 
