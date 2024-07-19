@@ -296,18 +296,21 @@ $(document).ready(function () {
 
 
 
-  
+
   // 아이콘이 도는 효과
 
 
   $('.sns .sns_all li a').mouseenter(function () {
 
-    let sns = $(this).parent('li').index();
+    let sns1 = $(this).parent('li').index();
 
     $('.sns .sns_all li .sns_app').removeClass('on');
 
-    $('.sns .sns_all li .sns_app').eq(sns).addClass('on');
+    $('.sns .sns_all li .sns_app').eq(sns1).addClass('on');
 
+
+
+    $(`.sns .sns_all li:nth-child(${sns1+1}) .sns_txt h3`).addClass('on');
 
 
   })
@@ -318,8 +321,14 @@ $(document).ready(function () {
 
   $('.sns .sns_all li a').mouseleave(function () {
 
+    let sns2 = $(this).parent('li').index();
 
     $('.sns .sns_all li .sns_app').removeClass('on');
+
+
+
+
+    $(`.sns .sns_all li:nth-child(${sns2+1}) .sns_txt h3`).removeClass('on');
 
 
   })

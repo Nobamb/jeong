@@ -1457,11 +1457,77 @@ section.wrap article {
 }
 
 
-.sns .sns_all li .sns_youtube_txt{
 
 
+
+
+
+.sns .sns_all li .sns_txt{
+
+  position: absolute;
+  left: 0;
+  top: calc(100% + 100px);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
 }
+
+
+
+
+
+.sns .sns_all li .sns_txt h3{
+
+  transition: all 0.3s;
+  font-size: 24px;
+  color: #606060;
+
+}
+
+
+.sns .sns_all li .sns_youtube_txt h3.on{
+
+  color: #ff0000;
+
+}
+
+
+.sns .sns_all li .sns_instagram_txt h3.on{
+
+  color: #E1306C;
+
+}
+
+.sns .sns_all li .sns_facebook_txt h3.on{
+
+  color: #1877F2;
+
+}
+
+
+
+.sns .sns_all li .sns_txt p{
+  text-align: center;
+  font-size: 16px;
+  color: #606060;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
