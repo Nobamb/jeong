@@ -4,6 +4,81 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+  
+// 로고 클릭시에
+$('h1').click(function () {
+
+  // 프로필 화면이 토글된다.(화면이 커지고 작아짐)
+
+  $('section.profile').toggleClass('on');
+
+
+})
+
+
+
+
+
+
+
+// 로고 span 마우스를 갖다댈 시에
+$('h1>span').mouseenter(function () {
+
+  // 로고 span에 off줌(그림자 제거)
+  $(this).addClass('off');
+
+
+  // 로고 span에 마우스를 뗄 시에
+  $(this).mouseleave(function(){
+
+    // off를 없앰(그림자 생김)
+    $(this).removeClass('off');
+
+  })
+
+})
+
+
+
+
+// 로고 time 호버 시에도 동일한 이벤트
+$('h1 .time').mouseenter(function () {
+
+  $('h1>span').addClass('off');
+
+  $('h1 .time').mouseleave(function(){
+
+    $('h1>span').removeClass('off');
+
+  })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
@@ -21,15 +96,7 @@ $(document).ready(function () {
   })
 
 
-  // 로고 클릭시에
-  $('h1').click(function () {
-
-    // 프로필 화면이 토글된다.(화면이 커지고 작아짐)
-
-    $('section.profile').toggleClass('on');
-
-
-  })
+  
 
 
   // 메뉴의 리스트 클릭시에
