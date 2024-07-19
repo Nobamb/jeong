@@ -446,10 +446,12 @@ $(document).ready(function () {
           filmoCount++;
 
 
-          
+
           $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
         }
 
+
+        
       }
 
       // 스크롤을 올렸을 때
