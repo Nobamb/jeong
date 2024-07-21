@@ -161,6 +161,9 @@ $(document).ready(function () {
 
 
 
+    
+
+
 
 
     // setinterval 나중에 함수 외부로 옮기기(clear 해도 바로 생김)
