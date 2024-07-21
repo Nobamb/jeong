@@ -381,6 +381,8 @@ section.intro {
 
 
 
+/* 인트로 배경 */
+
 section.intro .intro_area {
 
   position: absolute;
@@ -399,6 +401,8 @@ section.intro .intro_area {
 
 
 
+
+/* 시그니쳐 사운드(인트로 동안에 올라오는 연출) */
 section.intro .signiture {
 
   width: 100%;
@@ -409,6 +413,7 @@ section.intro .signiture {
 }
 
 
+/* 각 시그니쳐 사운드들 목록 */
 section.intro .signiture li {
 
   position: absolute;
@@ -466,16 +471,7 @@ section.intro .intro_area span.off {
 
 
 
-
-
-section.intro .bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-
-}
-
+/* 인트로의 바늘 */
 
 section.intro .niddle {
   z-index: 10;
@@ -507,6 +503,7 @@ section.intro .slush {
 
 
 
+/* 자르는 연출시에(그전까지는 none처리) */
 
 
 section.intro .slush.on {
@@ -550,6 +547,8 @@ section.intro .slush>img:nth-child(2) {
 
 
 
+
+/* 인트로 파괴 연출 */
 
 
 section.intro .intro_break {
@@ -701,6 +700,7 @@ section.intro .intro_break.on {
 
 
 
+/* 왼쪽의 로고 클릭전 */
 
 section.profile {
   font-family: "Nanum Pen Script";
@@ -721,7 +721,7 @@ section.profile {
 
 
 
-
+/* 클릭후 */
 
 section.profile.on {
 
@@ -730,6 +730,7 @@ section.profile.on {
 }
 
 
+/* 프로필 양옆 간격 설정 */
 
 section.profile>.profile_inner {
   width: calc(100% - 160px);
@@ -833,7 +834,7 @@ section.profile .paper_bg .picture1_box {
 }
 
 
-
+/* 한요한에 관한 글 영역 */
 
 section.profile .paper_bg .about {
 
@@ -1187,6 +1188,30 @@ section.profile .paper_bg .tmi p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 본문영역 */
 
 
@@ -1213,11 +1238,39 @@ section.wrap article {
   width: 100vw;
   height: 100vh;
   background-color: #E4E4E6;
+  transition: all 0.5s;
+}
+
+
+
+/* 로고 클릭시에 프로필이 앞으로 오면서 각 아티클들은 투명해짐 */
+
+section.wrap article.blind {
+
+  opacity: 0;
+
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인화면 영역 */
 
 .main {
 
@@ -1241,6 +1294,7 @@ section.wrap article {
 
 }
 
+/* 움직이는 연출(인트로 연출 후에 발생) */
 
 
 .main .record_box.on {
@@ -1250,6 +1304,9 @@ section.wrap article {
 
 }
 
+
+/* 레코드 내의 전체 음악 영역
+(음표부분이랑 숨겨진 음악 리스트로 이루어짐) */
 
 
 .main .record_box .music {
@@ -1264,6 +1321,10 @@ section.wrap article {
   transition: all 1s;
 
 }
+
+
+
+/* 음표 영역 */
 
 
 .main .record_box .music_box {
@@ -1285,6 +1346,8 @@ section.wrap article {
 
 
 
+/* 레코드 호버시 */
+
 
 .main .record_box .music_box.on {
 
@@ -1296,6 +1359,9 @@ section.wrap article {
 }
 
 
+
+/* 음악 리스트 영역
+(레코드 호버시 등장) */
 
 .main .record_box .music_box>ul {
 
@@ -1385,6 +1451,10 @@ section.wrap article {
 
 
 
+/* 레코드 애니메이션
+(평소에는 돌아가는 연출을 하고,
+재생을 멈출땐 돌아가는 연출이 멈춤) */
+
 
 
 
@@ -1397,6 +1467,8 @@ section.wrap article {
 }
 
 
+
+/* 레코드 돌아가는 애니메이션 */
 
 
 @keyframes record {
@@ -1428,6 +1500,8 @@ section.wrap article {
 }
 
 
+
+/* 레코드 하단의 플레이어 박스 */
 
 
 .main .record_box .player {
@@ -1487,10 +1561,123 @@ section.wrap article {
 
 
 
+/* 메인의 그림자 영역
+(시간대에 따라 이 그림자 배경이 달라짐) */
+
+
+
+.main .time_shadow{
+  mix-blend-mode: color-burn;
+  z-index: 10;
+  background-color: pink;
+  /* background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(32,32,32,1) 100%); */
+  /* background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(64,64,64,1) 100%); */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+
+}
 
 
 
 
+
+
+
+/* 메인 배경색 변경(on클래스) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메인 페이지 글 */
+
+
+.main .main_txt{
+
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  left: 187px;
+
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 110px;
+
+}
+
+
+
+
+
+.main .main_txt h2{
+
+  color: #606060;
+
+  font-size: 64px;
+}
+
+
+
+
+
+.main .main_txt p{
+
+  line-height: 3;
+  font-size: 16px;
+  color: #606060;
+
+}
+
+
+
+
+
+.main .white{
+
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+
+}
+
+  
+.main .main_picture{
+
+
+  width: 420px;
+  height: 560px;
+  background-image: url('img/hanyohan_main.png');
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+
+}
 
 
 
@@ -1599,6 +1786,7 @@ section.wrap article {
 .sns .sns_all li a {
   border-radius: 10px;
   display: block;
+
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1788,7 +1976,7 @@ section.wrap article {
 
   transition: all 0.3s;
   font-size: 24px;
-  color: #606060;
+  color: #fff;
 
 }
 
@@ -1818,7 +2006,7 @@ section.wrap article {
   width: 100%;
   text-align: center;
   font-size: 16px;
-  color: #606060;
+  color: #fff;
   transition:all 0.3s;
 }
 
