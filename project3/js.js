@@ -156,28 +156,6 @@ $(document).ready(function () {
 
 
 
-    // 메인 배경 색 변경
-
-
-
-    // 06~11시, 18~23시 일때 중간 어두움
-
-    for (let shadow = 0; shadow <= 1; shadow++) {
-
-
-      // if (hour >= 6 + (shadow * 12) && hour <= 11 + (shadow * 12) ) {
-
-
-      if (hour >= 0) {
-
-        console.log(shadow + 100);
-
-        console.log(hour);
-      }
-
-
-
-    }
 
 
 
@@ -185,10 +163,7 @@ $(document).ready(function () {
 
 
 
-
-
-
-
+    // setinterval 나중에 함수 외부로 옮기기(clear 해도 바로 생김)
 
 
 
@@ -246,7 +221,29 @@ $(document).ready(function () {
 
 
 
-  }, 100);
+
+    // 메인 배경 색 변경
+
+
+
+    // 06~11시, 18~23시 일때 중간 어두움
+
+    for (let shadow = 0; shadow <= 1; shadow++) {
+
+
+      // if (hour >= 6 + (shadow * 12) && hour <= 11 + (shadow * 12) ) {
+
+
+      if (hour >= 0) {
+
+        console.log(shadow + 100);
+
+        console.log(hour);
+      }
+
+
+
+    }
 
 
 
@@ -260,6 +257,13 @@ $(document).ready(function () {
 
 
   $(window).keydown(function (e) {
+
+
+    
+    clearInterval(zero_time);
+
+    clearInterval(one_time);
+
 
     if (e.key === 'Escape') {
 
@@ -286,6 +290,21 @@ $(document).ready(function () {
 
 
   })
+
+
+
+
+
+
+
+
+
+
+
+  }, 100);
+
+
+
 
 
 
