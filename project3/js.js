@@ -345,14 +345,24 @@ $(document).ready(function () {
   // 들어간 상태에서 다시 menu버튼을 누르면 돌아오게 하라
 
 
-  $('nav.on>span').click(function () {
+  $('nav>span').click(function () {
 
 
     // on클래스를 toggle시켜서 접고 여는 행위가 가능하게 함
     $('nav').toggleClass('on');
 
+    // 히스토리 마지막 시그니쳐 사운드가 버튼을 가리지 않게하여 움직임
+    $('.history_zone .years .years_info .signiture_deco.sign2').toggleClass('move');
 
   })
+
+
+
+
+
+
+
+
 
 
 
@@ -368,7 +378,7 @@ $(document).ready(function () {
 
 
     // .wrap이 움직이면서 화면이 전환됨
-    $('.wrap').animate({ 'top': `${i * -100}%` })
+    $('.wrap').stop().animate({ 'top': `${i * -100}%` })
 
 
     // 이전의 리스트는 지우고
@@ -484,14 +494,14 @@ $(document).ready(function () {
       // overCount가 짝수면 보임(0.1초 후에)
       if (overCount % 2 === 0) {
 
-        $('section.intro>.intro_area>span').animate({ 'opacity': '1' }, 100);
+        $('section.intro>.intro_area>span').stop().animate({ 'opacity': '1' }, 100);
 
       }
 
       // overCount가 홀수면 안보임(0.1초 후에)
       if (overCount % 2 === 1) {
 
-        $('section.intro>.intro_area>span').animate({ 'opacity': '0' }, 100);
+        $('section.intro>.intro_area>span').stop().animate({ 'opacity': '0' }, 100);
 
       }
 
@@ -873,6 +883,8 @@ $(document).ready(function () {
   $(window).mousewheel(function (e, x) {
 
 
+
+
     if ($('nav ul>li:nth-child(3)').hasClass('on')) {
 
 
@@ -888,7 +900,7 @@ $(document).ready(function () {
 
 
 
-          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 1000)
+          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 500);
         }
 
 
@@ -903,7 +915,7 @@ $(document).ready(function () {
 
           // 카운트를 내린후 오쪽으로 이동
           historyCount--;
-          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 1000)
+          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 500)
         }
 
 
@@ -912,13 +924,37 @@ $(document).ready(function () {
       }
 
 
+      $('.history_bar li').removeClass('on');
+
+      $('.history_bar li').eq(historyCount).addClass('on');
+
     }
 
 
-
-
-
   })
+
+
+
+
+
+
+
+$('.history_bar li').click(function(){
+
+  let his = $(this).index();
+
+  historyCount = his;
+
+  $('.history_bar li').removeClass('on');
+
+  $(this).addClass('on');
+
+  $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 500);
+
+})
+
+
+
 
 
 
