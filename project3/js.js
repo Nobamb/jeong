@@ -4,7 +4,341 @@ $(document).ready(function () {
 
 
 
-  
+
+
+
+
+
+
+  // 로고 클릭시에
+  $('h1').click(function () {
+
+    // 프로필 화면이 토글된다.(화면이 커지고 작아짐)
+
+    $('section.profile').toggleClass('on');
+
+    $('section.wrap article').toggleClass('blind');
+
+  })
+
+
+
+
+
+
+
+  // 로고 span 마우스를 갖다댈 시에
+  $('h1>span').mouseenter(function () {
+
+    // 로고 span에 off줌(그림자 제거)
+    $(this).addClass('off');
+
+
+    // 로고 span에 마우스를 뗄 시에
+    $(this).mouseleave(function () {
+
+      // off를 없앰(그림자 생김)
+      $(this).removeClass('off');
+
+    })
+
+  })
+
+
+
+
+  // 로고 time 호버 시에도 동일한 이벤트
+  $('h1 .time').mouseenter(function () {
+
+    $('h1>span').addClass('off');
+
+    $('h1 .time').mouseleave(function () {
+
+      $('h1>span').removeClass('off');
+
+    })
+
+  })
+
+
+
+
+
+  setInterval(function () {
+
+
+    // 현재 날짜의 시, 분, 초 변수 생성
+    let time = new Date();
+
+    let hour = time.getHours();
+
+    let min = time.getMinutes();
+
+    let sec = time.getSeconds();
+
+
+
+    // 표시할 시, 분, 초(9이하일땐 앞에 0이 붙게 함)
+    let thisHour = 0;
+
+    let thisMin = 0;
+
+    let thisSec = 0;
+
+
+
+    // 시, 분, 초가 9 이하일때 앞에 0이 붙은 채로 표시,
+    // 10 이상일땐 그대로 표시
+
+
+    if (hour <= 9) {
+
+      thisHour = '0' + hour;
+
+    }
+
+
+    else {
+
+      thisHour = hour;
+
+    }
+
+
+
+
+    if (min <= 9) {
+
+      thisMin = '0' + min;
+
+    }
+
+
+    else {
+
+      thisMin = min;
+    }
+
+
+
+
+
+    if (sec <= 9) {
+
+      thisSec = '0' + sec;
+
+    }
+
+
+    else {
+
+      thisSec = sec;
+
+    }
+
+
+
+
+    $('h1 .time span').eq(0).text(thisHour);
+
+    $('h1 .time span').eq(1).text(thisMin);
+
+    $('h1 .time span').eq(2).text(thisSec);
+
+
+
+
+
+    // 시간 관련 이벤트들
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // setinterval 나중에 함수 외부로 옮기기(clear 해도 바로 생김)
+
+
+
+
+    // 노래 관련 시간 이벤트
+
+
+
+    let zero_time = setInterval(() => {
+      // 12시가 되고 1시간동안은
+      if (hour === 0 && (min >= 0 && min <= 59)) {
+
+        // 기본 노래로 12:00 노래가 재생
+
+        $('.main .record_box .music_box>ul>li').removeClass('on');
+        $('.main .record_box .player>.play_this').text('12 : 00');
+
+      }
+    }, 1000);
+
+
+
+    let one_time = setInterval(() => {
+
+      if (hour === 1 && (min >= 0 && min <= 59)) {
+
+        // 기본 노래로 12:00 노래가 재생
+
+        $('.main .record_box .music_box>ul>li').removeClass('on');
+        $('.main .record_box .player>.play_this').text('1 : 00');
+
+      }
+
+    }, 1000)
+
+
+
+
+
+
+
+    // 다시 레코드 내의 음악 리스트들을 누르면 setinreval해제
+    // 해제해야 다른 노래들을 재생 가능
+
+    $('.main .record_box .music_box>ul>li').click(function () {
+
+      clearInterval(zero_time);
+
+      clearInterval(one_time);
+    })
+
+
+
+
+
+
+
+
+    // 메인 배경 색 변경
+
+
+
+
+
+
+
+
+
+
+    // 06~11시, 18~23시 일때 중간 어두움
+
+    if ((hour >= 6 && hour <= 11) || (hour >= 18 && hour <= 23)) {
+
+      $('.main #time_shadow').removeClass().addClass('shadowMiddle');
+
+    }
+
+
+
+
+
+    // 12~17시 일때 안 어두움
+
+
+    else if (hour >= 12 && hour <= 17) {
+
+      $('.main #time_shadow').removeClass().addClass('shadowLow');
+
+    }
+
+
+
+
+
+    // 00~05시 일때 많이 어두움
+
+    else {
+      $('.main #time_shadow').removeClass().addClass('shadowHigh');
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // 특정 커맨드를 입력시 관련 노래 재생
+
+
+
+    $(window).keydown(function (e) {
+
+
+
+      clearInterval(zero_time);
+
+      clearInterval(one_time);
+
+
+      if (e.key === 'Escape') {
+
+        $('.main .record_box .music_box>ul>li').removeClass('on');
+        $('.main .record_box .player>.play_this').text('ESC');
+
+      }
+
+
+      if ((e.key === 'c' || e.key === 'C') && e.ctrlKey) {
+
+        $('.main .record_box .player>.play_this').addClass('ctrlC');
+
+      }
+
+
+
+      if ((e.key === 'v' || e.key === 'V') && e.ctrlKey && $('.main .record_box .player>.play_this').hasClass('ctrlC')) {
+
+        $('.main .record_box .music_box>ul>li').removeClass('on');
+        $('.main .record_box .player>.play_this').text('ctrl c + ctrl v');
+
+      }
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+  }, 100);
+
+
+
+
+
+
+
+
+
+
+
 
 
   // menu버튼을 누르면 들어가게 하고
@@ -21,15 +355,7 @@ $(document).ready(function () {
   })
 
 
-  // 로고 클릭시에
-  $('h1').click(function () {
 
-    // 프로필 화면이 토글된다.(화면이 커지고 작아짐)
-
-    $('section.profile').toggleClass('on');
-
-
-  })
 
 
   // 메뉴의 리스트 클릭시에
@@ -296,77 +622,96 @@ $(document).ready(function () {
 
 
 
-// 레코드에 마우스를 올려두면
+  // 레코드에 마우스를 올려두면
 
 
-$('.main .record_box .record').mouseenter(function () {
+  $('.main .record_box .record').mouseenter(function () {
 
 
-  // 레코드 내의 박스가 오른쪽으로 나옴
+    // 레코드 내의 박스가 오른쪽으로 나옴
 
-  $('.main .record_box .music_box').addClass('on');
+    $('.main .record_box .music_box').addClass('on');
 
 
-  // 마우스를 떼면(레코드 박스의 영역을 포함한 부모 영역)
+    // 마우스를 떼면(레코드 박스의 영역을 포함한 부모 영역)
 
-  $('.main .record_box').mouseleave(function () {
+    $('.main .record_box').mouseleave(function () {
 
-    // 레코드 내의 박스가 다시 들어감
-    $('.main .record_box .music_box').removeClass('on');
+      // 레코드 내의 박스가 다시 들어감
+      $('.main .record_box .music_box').removeClass('on');
+
+    })
+
 
   })
 
 
-})
+
+
+
+  // 레코드 내의 음악 리스트 클릭시
+
+
+  $('.main .record_box .music_box>ul>li').click(function () {
+
+    // 음악리스트에 있던 on 클래스 제거
+
+    $('.main .record_box .music_box>ul>li').removeClass('on');
+
+    // 클릭한 리스트는 on(강조 효과)
+
+    $(this).addClass('on');
+
+    // 클릭한 리스트의 글자 지정
+
+    let music_text = $(this).text();
+
+
+    // ctrl c ctrl v 이스터에그 해제(지정 안해주면 ctrl v만 눌러도 작동)
+    $('.main .record_box .player>.play_this').removeClass('ctrlC');
+
+
+    // 지정한 글자를 플레이중인 노래명에 갖다 붙임
+
+    $('.main .record_box .player>.play_this').text(music_text);
+
+  })
+
+
+
+  // play/pause 버튼 클릭시
+
+  $('.main .record_box .player>.play').click(function () {
+
+    // 멈춤 또는 재생 아이콘 변경
+
+    $('.main .record_box .player>.play i').toggleClass('on');
+
+  })
 
 
 
 
 
 
-$('.main .record_box .music_box>ul>li').click(function(){
+
+  setInterval(() => {
 
 
-  $('.main .record_box .music_box>ul>li').removeClass('on');
+    if ($('.main .record_box .player>.play .fa-play').hasClass('on')) {
+
+      $('.main .record_box .record').css({ 'animation-play-state': 'paused' });
+
+    }
+
+    else {
+
+      $('.main .record_box .record').css({ 'animation-play-state': 'running' });
+
+    }
 
 
-  $(this).addClass('on');
-
-
-  let music_text = $(this).text();
-
-
-  $('.main .record_box .player>.play_this').text(music_text);
-
-})
-
-
-
-$('.main .record_box .player>.play').click(function(){
-
-  $('.main .record_box .player>.play i').toggleClass('on');
-
-})
-
-
-
-setInterval(()=>{
-
-
-  if($('.main .record_box .player>.play .fa-play').hasClass('on')){
-
-    $('.main .record_box .record').css({'animation-play-state' : 'paused'});
-
-  }
-
-  else{
-
-    $('.main .record_box .record').css({'animation-play-state' : 'running'});
-
-  }
-
-
-},300)
+  }, 300)
 
 
 
@@ -500,16 +845,16 @@ setInterval(()=>{
 
 
 
-  // 필모그래피
+  // 히스토리
 
 
 
-  // 필모그래피들의 기본 left값 지정
+  // 히스토리들의 기본 left값 지정
 
 
-  for (let filmo = 1; filmo <= 10; filmo++) {
+  for (let history = 1; history <= 10; history++) {
 
-    $(`.filmo_inner .filmo_zone_${filmo}`).css({ 'left': `${(filmo - 1) * 100}%` })
+    $(`.history_inner .history_zone_${history}`).css({ 'left': `${(history - 1) * 100}%` })
 
   }
 
@@ -518,7 +863,7 @@ setInterval(()=>{
 
   // 카운트 값만큼 움직이게 함
 
-  let filmoCount = 0;
+  let historyCount = 0;
 
 
 
@@ -536,29 +881,29 @@ setInterval(()=>{
       if (x < 0) {
 
         // 9미만일때(left -900px이 마지막 구간)
-        if (filmoCount < 9) {
+        if (historyCount < 9) {
 
           // 카운트를 올린후 왼쪽으로 이동
-          filmoCount++;
+          historyCount++;
 
 
 
-          $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
+          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 1000)
         }
 
 
-        
+
       }
 
       // 스크롤을 올렸을 때
 
       if (x > 0) {
         // 0 초과일때(left 0px이 첫번째 구간)
-        if (filmoCount > 0) {
+        if (historyCount > 0) {
 
           // 카운트를 내린후 오쪽으로 이동
-          filmoCount--;
-          $('.filmo_inner').stop().animate({ 'left': `${filmoCount * -100}%` }, 1000)
+          historyCount--;
+          $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 1000)
         }
 
 
