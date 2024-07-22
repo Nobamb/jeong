@@ -2300,7 +2300,7 @@ section.wrap article.blind {
 
 
 .history_zone .years .years_info .years_number .diamond {
-
+  z-index: 40;
   width: 100%;
   aspect-ratio: 1/1;
   position: absolute;
@@ -2327,7 +2327,7 @@ section.wrap article.blind {
   font-size: 32px;
   font-weight: bold;
   color: #E4E4E6;
-
+  z-index: 50;
 }
 
 

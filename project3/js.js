@@ -290,15 +290,23 @@ $(document).ready(function () {
 
       clearInterval(one_time);
 
-
+      // esc 키를 누를시에
       if (e.key === 'Escape') {
 
+
+        // 컨트롤 c 클래스와 현재 재생중인 음악의 on 클래스를 제거후
+        // esc키를 누르고 다시 ctrl c ctrl v를 눌러야 재생하게 하도록함
+        $('.main .record_box .player>.play_this').removeClass('ctrlC');
         $('.main .record_box .music_box>ul>li').removeClass('on');
+
+
+        // esc 음악이 재생함
         $('.main .record_box .player>.play_this').text('ESC');
 
       }
 
 
+      // ctrl c를 누르고(ctrlC 클래스 부여)
       if ((e.key === 'c' || e.key === 'C') && e.ctrlKey) {
 
         $('.main .record_box .player>.play_this').addClass('ctrlC');
@@ -306,7 +314,7 @@ $(document).ready(function () {
       }
 
 
-
+      // ctrl v를 누르면 ctrl c ctrl v 재생(ctrlC클래스가 있는지 검사하여 확인)
       if ((e.key === 'v' || e.key === 'V') && e.ctrlKey && $('.main .record_box .player>.play_this').hasClass('ctrlC')) {
 
         $('.main .record_box .music_box>ul>li').removeClass('on');
