@@ -64,6 +64,21 @@ body {
 
 
 
+
+/* inner 기본설정 */
+
+
+.inner {
+
+  width: calc(100% -160px);
+  height: 100%;
+  margin: 0 80px;
+
+}
+
+
+
+
 /* 인트로 설정 */
 
 section.intro {
@@ -2079,7 +2094,7 @@ section.wrap article.blind {
 /* 히스토리 */
 
 
-.history{
+.history {
 
   width: 100%;
   height: 100%;
@@ -2094,7 +2109,7 @@ section.wrap article.blind {
 /* 메뉴바 */
 
 
-.history_bar{
+.history_bar {
 
   width: 70%;
   height: 100px;
@@ -2104,17 +2119,17 @@ section.wrap article.blind {
   transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
-  z-index: 800;  
+  z-index: 800;
 
 }
 
 
 
-.history_bar li{
+.history_bar li {
 
   width: 8%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(47,47,47,1) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(180deg, rgba(47, 47, 47, 1) 0%, rgba(255, 255, 255, 0) 100%);
   cursor: pointer;
   opacity: 0.4;
   transition: all 0.5s;
@@ -2128,7 +2143,7 @@ section.wrap article.blind {
 
 
 
-.history_bar li.on{
+.history_bar li.on {
 
   opacity: 1;
 
@@ -2136,7 +2151,7 @@ section.wrap article.blind {
 
 
 
-.history_bar li:hover{
+.history_bar li:hover {
 
   opacity: 1;
 
@@ -2520,7 +2535,7 @@ section.wrap article.blind {
 
 /* 앨범이름 배경 */
 
-.history_zone .history_about li p{
+.history_zone .history_about li p {
   backdrop-filter: blur(10px);
   transform: scale(0.9);
   width: 100%;
@@ -2538,7 +2553,7 @@ section.wrap article.blind {
 
 /* 리스트 호버시 색깔이 진해지고 사진과 같이 크기가 커짐 */
 
-.history_zone .history_about li:hover p{
+.history_zone .history_about li:hover p {
 
   transform: scale(1.2);
   background-color: #fff;
@@ -2549,7 +2564,7 @@ section.wrap article.blind {
 
 /* 앨범이름 */
 
-.history_zone .history_about li span{
+.history_zone .history_about li span {
 
   color: #606060;
 
@@ -2574,7 +2589,7 @@ section.wrap article.blind {
 
 /* 앨범 사진 속성 */
 
-.history_zone .history_about li div{
+.history_zone .history_about li div {
 
   width: 100%;
   height: 100%;
@@ -2589,7 +2604,7 @@ section.wrap article.blind {
 /* 리스트 호버시 앨범 사진 크기도 증가 */
 
 
-.history_zone .history_about li:hover div{
+.history_zone .history_about li:hover div {
 
   transform: scale(1.2);
   opacity: 1;
@@ -2607,7 +2622,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album1 {
-  background-image: url('img/album고화질/history_album_2015.png');
+  background-image: url('img/album/history_album_2015.png');
 }
 
 
@@ -2626,7 +2641,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album2 {
-  background-image: url('img/album고화질/history_album_2016.png');
+  background-image: url('img/album/history_album_2016.png');
 }
 
 
@@ -2646,7 +2661,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album3 {
-  background-image: url('img/album고화질/history_album_2017.png');
+  background-image: url('img/album/history_album_2017.png');
 }
 
 
@@ -2661,7 +2676,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album4 {
-  background-image: url('img/album고화질/history_album_2018.png');
+  background-image: url('img/album/history_album_2018.png');
 }
 
 
@@ -2680,7 +2695,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album5 {
-  background-image: url('img/album고화질/history_album_2019.png');
+  background-image: url('img/album/history_album_2019.png');
 }
 
 
@@ -2705,7 +2720,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album6 {
-  background-image: url('img/album고화질/history_album_2020.jpg');
+  background-image: url('img/album/history_album_2020.jpg');
 }
 
 
@@ -2735,7 +2750,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album7 {
-  background-image: url('img/album고화질/history_album_2021.png');
+  background-image: url('img/album/history_album_2021.png');
 }
 
 
@@ -2753,7 +2768,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album8 {
-  background-image: url('img/album고화질/history_album_2022.webp');
+  background-image: url('img/album/history_album_2022.webp');
 }
 
 
@@ -2770,7 +2785,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album9 {
-  background-image: url('img/album고화질/history_album_2023.webp');
+  background-image: url('img/album/history_album_2023.webp');
 }
 
 
@@ -2789,7 +2804,7 @@ section.wrap article.blind {
 
 
 .history_zone .history_about li .history_img_album10 {
-  background-image: url('img/album고화질/history_album_2024.jpg');
+  background-image: url('img/album/history_album_2024.jpg');
 }
 
 
@@ -2819,20 +2834,533 @@ section.wrap article.blind {
 
 
 
-.album_inner{
+.album_inner {
+
+  position: relative;
+}
+
+
+.album_click{
+
+  position: absolute;
+  width: 200px;
+  height: 220px;
+  top: 55px;
+  left: 108px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+
+
+.album_click li{
+
+  transition: all 1s;
+  position: relative;
+  height: 20%;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+.album_click li:hover{
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.album_click li.on{
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.album_click li .play{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.album_click li:hover .play{
+  display: block;
+}
+
+.album_click li.on .play{
+  display: block;
+}
+
+
+.album_click li .play i{
+
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: #fff;
+}
+
+.album_click li .play i.on{
+  opacity: 1;
+}
+
+
+
+.album_click li .play_line{
+
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 1s;
+}
+
+
+.album_click li:hover .play_line{
+
+  opacity: 1;
+
+}
+
+
+.album_click li.on .play_line{
+
+  opacity: 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+.album_inner .album_list {
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+
+.album_inner .button1 {
+
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  left: 20%;
+  top: 80%;
+  z-index: 100;
+  cursor: pointer;
+  background-color: red;
+}
+
+
+
+.album_inner .button2 {
+
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  left: 80%;
+  top: 80%;
+  z-index: 100;
+  cursor: pointer;
+  background-color: blue;
+
+}
+
+.album_list ul {
 
   display: flex;
+  justify-content: space-between;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 166.6666%;
+
+
+}
+
+
+.album_list ul li {
+  width: 20%;
+  height: 100%;
+  opacity: 0.6;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.album_list ul li.on {
+  opacity: 1;
+}
+
+
+.album_list ul li .album_circle {
+
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-position: center center;
+  background-size: cover;
+
+}
+
+
+.album_list ul li.on .album_circle {
+
+  width: 400px;
+  height: 400px;
+
+}
+
+
+
+
+.album_list ul li.on .album_circle img{
+
+  transition: all 0.5s;
+
+}
+
+
+
+
+
+.album_list ul li .album_circle1 {
+
+  background-image: url('img/album/album4-2.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+
+.album_list ul li .album_circle1 img {
+
+  width: 100%;
+  transform: scale(0) translate(0, 0);
+
+
+}
+
+
+.album_list ul li.on .album_circle1 img {
+
+  width: 100%;
+  transform: scale(1) translate(-50px, -50px);
+}
+
+
+
+
+
+
+.album_list ul li .album_circle2 {
+
+  background-image: url('img/album/album5-2.png');
+  overflow: hidden;
+  position: relative;
+}
+
+
+.album_list ul li .album_circle2 img {
+
+
+  width: 100%;
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+
+}
+
+
+.album_list ul li.on .album_circle2 img {
+
+  bottom: 20%;
+
+}
+
+
+
+
+
+.album_list ul li .album_circle3 {
+
+  background-image: url('img/album/history_album_2019.png');
+
+  overflow: hidden; 
+  position: relative;
+}
+
+
+.album_list ul li .album_circle3 img:nth-child(1){
+
+  width: 20%;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  transition: all 1s;
+}
+
+
+.album_list ul li.on .album_circle3 img:nth-child(1){
+
+  left: -20%;
+
+}
+
+.album_list ul li .album_circle3 img:nth-child(2){
+
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+}
+
+
+
+
+
+
+
+.album_list ul li .album_circle4 {
+
+  background-image: url('img/album/history_album_2021.png');
+  display: flex;
+  justify-content: center;
   align-items: center;
 
 }
 
 
 
-.album_inner ul{
+
+.album_list ul li.on .album_circle4 {
+
+  animation: album2 1s linear;
+
+}
+
+
+
+.album_list ul li .album_circle4 img{
+
+
+  width: 120%;
+  border-radius: 50%;
+  transform: scale(0);
+
+}
+
+
+
+
+.album_list ul li.on .album_circle4 img{
+
+  animation: album1 1s linear;
+
+  
+
+}
+
+
+
+
+@keyframes album1{
+
+  0%{
+
+    transform: scale(0);
+    opacity: 0;
+
+  }
+
+  25%{
+
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50%{
+
+    transform: scale(0);
+    opacity: 0;
+
+  }
+
+  75%{
+
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+
+  100%{
+
+    transform: scale(0);
+    opacity: 0;
+  }
+
+}
+
+
+
+@keyframes album2{
+
+  0%{
+
+    opacity: 0.5;
+
+  }
+
+  25%{
+
+    opacity: 0.8;
+  }
+
+  50%{
+
+    opacity: 0.5;
+
+  }
+
+  75%{
+
+    opacity: 0.8;
+  }
+
+
+  100%{
+
+    opacity: 0.5;
+  }
+
+}
+
+
+
+.album_list ul li .album_circle5 {
+
+  background-image: url('img/album/album3-1.png');
+  transition: all 0.5s;
+
+
+}
+
+
+
+
+
+.album_list ul li.on .album_circle5 {
+
+  background-image: url('img/album/album3.png');
+
+
+}
+
+
+
+
+
+
+
+.album_play{
+
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.album_play .play_bar{
+
+  width: 60%;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 9999px;
+
+}
+
+.album_play .play_bar .play_ball{
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #606060;
+
+}
+
+
+
+
+.album_play .play_time{
 
   display: flex;
-  width: 100%;
-  height: 600px;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.album_play .play_time p{
+  font-size: 20px;
+  padding: 0 5px;
+
+}
+
+
+.album_play .play_time span{
+
+  font-size: 20px;
+
+}
+
+
+
+
+.album_play .play_buttons{
+
+  width: 20%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -2842,25 +3370,85 @@ section.wrap article.blind {
 
 
 
+.album_play .play_buttons li{
+
+  cursor: pointer;
+  width:15%;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+/* 다음버튼을 이전버튼으로 만들기위해 180도 뒤집음 */
+
+.album_play .play_buttons li:nth-child(3){
+
+  transform: rotate(180deg);
+
+}
 
 
 
 
+/* 플레이 앱 */
+
+.album_play .play_app{
+
+  width: 150px;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+}
 
 
 
 
+.album_play .play_app li{
+
+  height: 60px;
+  aspect-ratio: 1/1;
+  
+}
 
 
+.album_play .play_app li a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.album_play .play_app li:nth-child(1) a{
+
+  background-color: #ff0000;
 
 
+}
+
+.album_play .play_app li:nth-child(1) a i{
+
+  font-size: 32px;
+
+}
 
 
+.album_play .play_app li:nth-child(2) a i{
 
+  font-size: 60px;
+  color: #1ed760;
 
-
-
-
+}
 
 
 

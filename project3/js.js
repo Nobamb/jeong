@@ -932,6 +932,9 @@ $(document).ready(function () {
       }
 
 
+      // 스크롤에 의해 화면전환했을 때 해당 화면에 맞는 on클래스를 상단의 li에 적용
+
+
       $('.history_bar li').removeClass('on');
 
       $('.history_bar li').eq(historyCount).addClass('on');
@@ -947,23 +950,21 @@ $(document).ready(function () {
 
 
 
-$('.history_bar li').click(function(){
+  // 상단의 리스트르르 클릭했을 때 클릭한 부분만큼 화면이 전환되게 함
 
-  let his = $(this).index();
+  $('.history_bar li').click(function () {
 
-  historyCount = his;
+    let his = $(this).index();
 
-  $('.history_bar li').removeClass('on');
+    historyCount = his;
 
-  $(this).addClass('on');
+    $('.history_bar li').removeClass('on');
 
-  $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 500);
+    $(this).addClass('on');
 
-})
+    $('.history_inner').stop().animate({ 'left': `${historyCount * -100}%` }, 500);
 
-
-
-
+  })
 
 
 
@@ -974,6 +975,289 @@ $('.history_bar li').click(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // 앨범 이벤트
+
+
+
+
+
+  // 앨범을 이동시킬 변수 선언
+
+  let ac = 0;
+
+
+
+
+  $('.album_play .play_buttons li:nth-child(3)').click(function () {
+
+    if (ac > -1) {
+
+      // 변수 1씩 감소
+      // ac 3 기준, 1이 left 0, 2가 33.3333%기준으로 끝점에 있었기에
+      // ac -1 기준  0이 left 0, 1이 33.3333%에 있어야 됨
+      ac--;
+
+
+      // 변수에 따라 앨범을 움직임
+
+
+      $('.album_list ul').stop().animate({ 'left': `${ac * -33.3333}%` }, 1000);
+
+
+      // 기존 가운데에 있던 리스트의 on클래스 제거후
+
+      $('.album_list li').removeClass();
+
+
+      // 새로 가운데로 오게 될 리스트에 on클래스를 줌
+
+      $('.album_list li').eq(ac + 1).addClass('on');
+
+
+
+      // 상단의 리스트들도 바뀐 앨범에 따라 on값 변경
+
+
+      $('.album_click li').removeClass('on');
+
+
+      $('.album_click li').eq(ac + 1).addClass('on');
+
+    }
+
+
+  })
+
+
+  // 버튼1 클릭시
+
+  $('.album_play .play_buttons li:nth-child(4)').click(function () {
+
+
+    // ac가 3미만일 때
+    if (ac < 3) {
+
+      // 변수 1씩 추가
+      // ac 0 기준, 1이 left 0, 2가 33.3333%기준으로 시작점에 있었기에
+      // ac 3 기준  4(ac(3) + 1)가 left 0, 5(ac(3) + 2)가 33.3333%에 있어야 됨
+
+      ac++;
+
+
+      // 변수에 따라 앨범을 움직임
+
+
+      $('.album_list ul').stop().animate({ 'left': `${ac * -33.3333}%` }, 1000);
+
+
+      // 기존 가운데에 있던 리스트의 on클래스 제거후
+
+      $('.album_list li').removeClass();
+
+
+      // 새로 가운데로 오게 될 리스트에 on클래스를 줌
+
+      $('.album_list li').eq(ac + 1).addClass('on');
+
+
+
+      // 상단의 리스트들도 바뀐 앨범에 따라 on값 변경
+      $('.album_click li').removeClass('on');
+
+
+      $('.album_click li').eq(ac + 1).addClass('on');
+
+
+    }
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+  // 상부의 리스트를 클릭하면 해당 앨범으로 이동
+
+  $('.album_click li').click(function () {
+
+
+    let albumI = $(this).index();
+
+    $('.album_click li').removeClass();
+
+    $(this).addClass('on');
+
+
+    ac = albumI - 1;
+
+
+    $('.album_list ul').stop().animate({ 'left': `${(ac) * -33.3333}%` }, 1000);
+
+
+    // 기존 가운데에 있던 리스트의 on클래스 제거후
+
+    $('.album_list li').removeClass();
+
+
+    // 새로 가운데로 오게 될 리스트에 on클래스를 줌
+
+    $('.album_list li').eq(ac + 1).addClass('on');
+
+
+
+  })
+
+
+
+
+
+
+  // 유튜브 스포티파이 이동 이벤트
+
+
+  setInterval(() => {
+
+
+    // 첫번째 앨범 재생될 때
+
+    if ($('.album_list ul li:nth-child(1)').hasClass('on')) {
+
+      // 유튜브, 스포티파이는 첫번째 앨범 링크로감(나머지도 모두 동일)
+
+      $('.album_play .play_app li:nth-child(1)').find('a').attr("href", "https://youtu.be/medo8dj_-28?si=f99cX8fi_VKdKril");
+
+      $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/track/0YjaYbmmCgUUwOVAA3wqiV");
+
+    }
+
+
+
+
+    if ($('.album_list ul li:nth-child(2)').hasClass('on')) {
+
+      $('.album_play .play_app li:nth-child(1)').find('a').attr("href", "https://youtu.be/Sq9DmUBdQMs?si=lINrii9mkWV3rcwF");
+
+      $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/track/5PFqdHy3b9PGgfns2uVpE6");
+
+    }
+
+    if ($('.album_list ul li:nth-child(3)').hasClass('on')) {
+
+      $('.album_play .play_app li:nth-child(1)').find('a').attr("href", "https://youtu.be/PRLuDnZtsOY?si=aso1lPnerqVlUni2");
+
+      $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/track/7qyUYMwT1UBUFHtvL2EVAC");
+
+    }
+
+    if ($('.album_list ul li:nth-child(4)').hasClass('on')) {
+
+      $('.album_play .play_app li:nth-child(1)').find('a').attr("href", "https://youtu.be/_6kZcZvFmHc?si=Pc8gqmpcq2NZZRqC");
+
+      $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/track/1GeX7W2VtmtceoW9fzZ8Oc");
+
+    }
+
+    if ($('.album_list ul li:nth-child(5)').hasClass('on')) {
+
+      $('.album_play .play_app li:nth-child(1)').find('a').attr("href", "https://youtu.be/q3HdmX9kIek?si=Tnk84Sl-1rKv1jU4");
+
+      $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/search/%EA%B0%80%EC%8A%B5%EA%B8%B0");
+
+    }
+
+
+
+
+
+  }, 1000)
+
+
+
+
+
+
+
+
+
+  // 앨범 이름을 클릭하면 해당 부분의 재생 표시가 나고
+  // 나머지 이름들은 정지 표시가 남
+
+  // 앞뒤 버튼 눌러도 적용되게 하기
+
+  $('.album_click li').click(function () {
+
+
+    $('.album_click li .play').find('i:nth-child(1)').removeClass('on');
+
+    $('.album_click li .play').find('i:nth-child(2)').addClass('on');
+
+    $(this).find('i:nth-child(2)').removeClass('on');
+
+    $(this).find('i:nth-child(1)').addClass('on');
+  
+  
+  })
+
+
+  $('.album_click li').click(function () {
+
+
+    $('.album_click li .play').find('i:nth-child(1)').removeClass('on');
+
+    $('.album_click li .play').find('i:nth-child(2)').addClass('on');
+
+    $(this).find('i:nth-child(2)').removeClass('on');
+
+    $(this).find('i:nth-child(1)').addClass('on');
+  
+  
+  })
+
+
+
+
+  if($(this).hasClass('on')){
+
+
+    $(this).find('.play i').toggleClass('on');
+
+
+
+  }
 
 
 
