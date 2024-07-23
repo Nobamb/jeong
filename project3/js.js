@@ -1139,6 +1139,31 @@ $(document).ready(function () {
 
 
 
+
+
+    // 앨범 이름을 클릭하면 해당 부분의 재생 표시가 나고
+    // 나머지 이름들은 정지 표시가 남
+
+
+
+
+    $('.album_click li .play').find('i:nth-child(1)').removeClass('on');
+
+    $('.album_click li .play').find('i:nth-child(2)').addClass('on');
+
+    $(this).find('i:nth-child(2)').removeClass('on');
+
+    $(this).find('i:nth-child(1)').addClass('on');
+
+
+
+
+
+
+
+
+
+
   })
 
 
@@ -1163,8 +1188,6 @@ $(document).ready(function () {
       $('.album_play .play_app li:nth-child(2)').find('a').attr("href", "https://open.spotify.com/track/0YjaYbmmCgUUwOVAA3wqiV");
 
     }
-
-
 
 
     if ($('.album_list ul li:nth-child(2)').hasClass('on')) {
@@ -1213,51 +1236,172 @@ $(document).ready(function () {
 
 
 
-  // 앨범 이름을 클릭하면 해당 부분의 재생 표시가 나고
-  // 나머지 이름들은 정지 표시가 남
-
-  // 앞뒤 버튼 눌러도 적용되게 하기
-
-  $('.album_click li').click(function () {
 
 
-    $('.album_click li .play').find('i:nth-child(1)').removeClass('on');
-
-    $('.album_click li .play').find('i:nth-child(2)').addClass('on');
-
-    $(this).find('i:nth-child(2)').removeClass('on');
-
-    $(this).find('i:nth-child(1)').addClass('on');
-  
-  
-  })
 
 
-  $('.album_click li').click(function () {
 
 
-    $('.album_click li .play').find('i:nth-child(1)').removeClass('on');
+  // 뒤로가기 적용시 재생/정지
 
-    $('.album_click li .play').find('i:nth-child(2)').addClass('on');
+  $('.album_play .play_buttons li').eq(2).click(function () {
 
-    $(this).find('i:nth-child(2)').removeClass('on');
+    $('.album_click li').find('i:nth-child(1)').removeClass('on');
 
-    $(this).find('i:nth-child(1)').addClass('on');
-  
-  
+    $('.album_click li').find('i:nth-child(2)').addClass('on');
+
+    $(`.album_click li:nth-child(${ac + 2}) .play`).find('i:nth-child(2)').removeClass('on');
+
+    $(`.album_click li:nth-child(${ac + 2}) .play`).find('i:nth-child(1)').addClass('on');
   })
 
 
 
 
-  if($(this).hasClass('on')){
-
-
-    $(this).find('.play i').toggleClass('on');
+  // 앞으로 가기 적용시 재생/정지
 
 
 
-  }
+  $('.album_play .play_buttons li').eq(3).click(function () {
+
+    $('.album_click li').find('i:nth-child(1)').removeClass('on');
+
+    $('.album_click li').find('i:nth-child(2)').addClass('on');
+
+    $(`.album_click li:nth-child(${ac + 2}) .play`).find('i:nth-child(2)').removeClass('on');
+
+    $(`.album_click li:nth-child(${ac + 2}) .play`).find('i:nth-child(1)').addClass('on');
+
+
+  })
+
+
+
+
+
+
+
+
+  // 앨범 리스트에서의 재생/멈춤
+
+
+  $('.album_click li span').click(function (e) {
+
+    // 부모요소의 이벤트 버블링을 막음
+
+    // 부모 클래스를 클릭했을 때 
+    // 앨범 이름을 클릭하면 해당 부분의 재생 표시가 나고
+    // 나머지 이름들은 정지 표시가 나는 이벤트와 충돌함
+
+    e.stopPropagation();
+
+    // 클릭한 리스트가 on클래스가 존재할경우 
+    // 리스트에 있는 아이콘에 onclass를 토글함(재생 및 정지)
+
+    if ($(this).parent('li').hasClass('on')) {
+
+      $(this).find('i').toggleClass('on');
+
+    }
+
+
+
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+  // 앨범별 기본 재생시간 
+
+
+
+  
+
+
+
+  setInterval(function(){
+
+    if($('.album_click li').eq(0).hasClass('on')){
+
+      $('.full_minutes').text('03');
+
+
+      $('.full_seconds').text('20');
+
+    }
+
+
+    if($('.album_click li').eq(1).hasClass('on')){
+
+
+      $('.full_minutes').text('03');
+
+
+      $('.full_seconds').text('30');
+    }
+
+
+    if($('.album_click li').eq(2).hasClass('on')){
+
+      $('.full_minutes').text('03');
+
+
+      $('.full_seconds').text('29');
+
+    }
+
+    if($('.album_click li').eq(3).hasClass('on')){
+
+
+      $('.full_minutes').text('03');
+
+
+      $('.full_seconds').text('41');
+    }
+
+    if($('.album_click li').eq(4).hasClass('on')){
+
+
+      $('.full_minutes').text('04');
+
+
+      $('.full_seconds').text('02');
+
+    }
+
+
+  },500)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
