@@ -1640,27 +1640,27 @@
         <ul class="album_vid hidden">
           <li>
             <video loop>
-              <source src="vid/vid1.mp4">
+              <source src="vid/vid1.mp4" type="video/mp4">
             </video>
           </li>
           <li class="on">
             <video loop>
-              <source src="vid/vid2.mp4">
+              <source src="vid/vid2.mp4" type="video/mp4">
             </video>
           </li>
           <li>
             <video loop>
-              <source src="vid/vid3.mp4">
+              <source src="vid/vid3.mp4" type="video/mp4">
             </video>
           </li>
           <li>
             <video loop>
-              <source src="vid/vid4.mp4">
+              <source src="vid/vid4.mp4" type="video/mp4">
             </video>
           </li>
           <li>
             <video loop>
-              <source src="vid/vid5.mp4">
+              <source src="vid/vid5.mp4" type="video/mp4">
             </video>
           </li>
         </ul>
@@ -1672,7 +1672,9 @@
         <ul class="album_click">
           <li>범퍼카
             <span class="play">
+              <!-- 재생표시(이게 표시되면 재생됨) -->
               <i class="fa-solid fa-play"></i>
+              <!-- 정지표시(이게 표시되면 정지됨) -->
               <i class="fa-solid fa-pause on"></i>
             </span>
             <div class="play_line"></div>
@@ -1756,6 +1758,7 @@
           <!-- 재생바 -->
           <div class="play_bar">
             <div class="play_bar_this">
+              <div class="play_bar_ball"></div>
               <div class="play_ball"></div>
             </div>
           </div>
@@ -1897,7 +1900,7 @@
 
           <!-- 공연사진 -->
 
-          <li class="photo_list1 photo_list">
+          <li class="photo_list1 photo_list on">
             <ul>
               <li></li>
               <li></li>
@@ -1948,7 +1951,7 @@
 
           <!-- 화보사진 -->
 
-          <li class="photo_list3 photo_list on">
+          <li class="photo_list3 photo_list">
             <ul>
               <li></li>
               <li></li>

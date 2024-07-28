@@ -1038,7 +1038,7 @@ $(document).ready(function () {
 
 
 
-
+  $('album_vid li:nth-child(5)').volume = 2.0;
 
 
 
@@ -1072,10 +1072,38 @@ $(document).ready(function () {
 
 
 
+  // 재생시간 표시하는거
+
+  // 이거 구현해보기
 
 
 
+  let videoMinutes = 0;
 
+  let videoSeconds = 0;
+
+
+
+  let playingVideo = setInterval(function () {
+
+
+    videoSeconds++;
+
+
+    if (videoSeconds === 60) {
+
+      videoSeconds = 0;
+
+      videoMinutes++;
+
+    }
+
+    $('this this_minutes').text(videoMinutes);
+
+
+    $('this this_seconds').text(videoSeconds);
+
+  }, 1000)
 
 
 
@@ -1090,9 +1118,16 @@ $(document).ready(function () {
   $('.album_play .play_buttons li:nth-child(2)').click(function () {
 
 
+    // 색깔 표시 및 정지 활성화 표시
 
+    $('.album_play .play_buttons li').removeClass('on');
+
+    $(this).addClass('on');
 
     $('.album_vid li.on video').get(0).pause();
+
+
+    clearInterval(playingVideo);
 
   });
 
@@ -1110,9 +1145,16 @@ $(document).ready(function () {
   // 재생바의 재생버튼 누르면 영상 재생
   $('.album_play .play_buttons li:nth-child(1)').click(function () {
 
+    // 색깔 표시 및 재생 활성화 표시
+
+    $('.album_play .play_buttons li').removeClass('on');
+
+    $(this).addClass('on');
+
+
     $('.album_vid li.on video').get(0).play();
 
-
+    playingVideo;
   });
 
 
@@ -1157,13 +1199,26 @@ $(document).ready(function () {
 
 
 
+        $('.album_play .play_buttons li').removeClass('on');
+
+        $('.album_play .play_buttons li:nth-child(2)').addClass('on');
+
+
         $('.album_vid li.on video').get(0).pause();
 
 
       }
 
 
+
+
+
       if ($(this).find('i:nth-child(2)').hasClass('on')) {
+
+
+        $('.album_play .play_buttons li').removeClass('on');
+
+        $('.album_play .play_buttons li:nth-child(1)').addClass('on');
 
 
         $('.album_vid li.on video').get(0).play();
@@ -1184,8 +1239,190 @@ $(document).ready(function () {
 
 
 
+  let vt = 0;
 
 
+  let vc = 0;
+
+
+  let vp = 0;
+
+  // 재생시간에 따른 재생바 표시
+
+
+  let playing = setInterval(() => {
+    // 총 재생 시간
+    let vt = $('.album_vid li.on video').get(0).duration;
+
+    // 현재 재생시간
+    let vc = $('.album_vid li.on video').get(0).currentTime;
+
+    // 퍼센트로 변환(픽셀로 빼기 전의 width값)
+    let vp = (vc / vt) * 100;
+
+    // play_bar_this의 부모 요소(재생바인 play_bar) 너비(만약에 width가 1200px이면)
+    let conWidth = $('.album_play .play_bar').width();
+
+    // 퍼센트를 픽셀 값으로 변환(vp가 1당 12px, 30이면 360px이 된다.)
+    let barWidth = (vp / 100) * conWidth;
+
+    // 빼야 할 픽셀 값
+    // 20px(볼 가로 크기)
+    let pixels = 20;
+
+    // 새로운 너비 계산(픽셀값으로 변환한 값 - 빼야 될 픽셀값)
+    // 예를 들어 360px에서 30을 빼면 330px이다.
+    let newWidthPx = barWidth - pixels;
+
+    // 새로운 너비를 퍼센트로 변환
+    // 330에서 부모요소 너비를 나누고 100을 곱하면 px에서 퍼센트로 다시 변환된다.
+    let newWidthPer = (newWidthPx / conWidth) * 100;
+
+    // 새로운 너비 설정
+    $('.album_play .play_bar_this').width(newWidthPer + '%');
+
+  }, 300);
+
+
+
+
+
+
+
+
+
+
+
+
+  // 제생바의 특정 구간을 클릭하면 그 구간으로 이동
+
+
+
+
+  $('.album_play .play_bar').click(function (e) {
+
+
+
+
+
+    $('.album_click li.on .play').find('i:nth-child(2)').removeClass('on');
+
+    $('.album_click li.on .play').find('i:nth-child(1)').addClass('on');
+
+
+    // 재생바의 시작과 끝점 지정
+
+
+
+    // 시작점
+
+    // 재생바 맨 왼쪽 + 20(재생바의 볼)
+
+    let startPlay = $(this).offset().left + 20;
+
+
+
+
+
+    // 끝점
+
+    // 재생바 맨 오른쪽(재생바 맨 왼쪽 + 재생바 길이)
+
+    let finishPlay = $(this).offset().left + $(this).width();
+
+
+
+
+
+
+    // 총길이(끝점 - 시작점)
+
+    let playWidth = finishPlay - startPlay;
+
+
+
+
+
+
+
+    // 클릭한 부분의 좌표값을 구함
+
+    // 전체화면에서 클릭한 부분의 x값 - 재생바에서의 최소 x값
+
+    let x = e.pageX - startPlay;
+
+
+
+
+
+
+
+
+
+    // 클릭한 부분의 비율을 구함
+
+    // (클릭 좌표 / 총 길이) * 100
+
+
+
+
+    let xPersent = ((x - 20) / playWidth) * 100;
+
+
+
+
+
+
+    // 총길이의 일점 비율을 클릭하면 그 비율만큼 play_bar_this가 움직이고,
+
+    // 총 길이에서 30%를 클릭하면 play_bar_this는 길이가 30%가됨
+
+
+    if (e.pageX < finishPlay) {
+
+      $('.album_play .play_bar_this').width(xPersent + '%');
+
+    }
+
+
+
+
+    // currentTime도 전체 재생시간중에 클릭한 비율만큼 표시됨
+
+
+
+    let playTime = ((x + 20) / $(this).width()) * 100;
+
+
+    let curPlayTime = 0;
+
+
+    let duPlayTime = $('.album_vid li.on video').get(0).duration;
+
+
+    curPlayTime = playTime * duPlayTime / 100;
+
+
+
+    $('.album_vid li.on video').get(0).currentTime = curPlayTime;
+
+
+
+    // 시간대 이동시 멈춤처리
+
+    $('.album_vid li.on video').get(0).pause();
+
+
+
+    $('.album_play .play_buttons li').removeClass('on');
+
+    $('.album_play .play_buttons li:nth-child(2)').addClass('on');
+
+    $('.album_click li.on .play i').removeClass('on');
+
+    $('.album_click li.on .play i').eq(1).addClass('on');
+
+  })
 
 
 
@@ -1519,6 +1756,15 @@ $(document).ready(function () {
 
 
 
+
+    $('.album_play .play_buttons li').removeClass('on');
+
+    $('.album_play .play_buttons li:nth-child(2)').addClass('on');
+
+
+
+
+
   })
 
 
@@ -1663,6 +1909,8 @@ $(document).ready(function () {
 
   $('.album_list li').click(function () {
 
+    let album_origin = $('.album_list li.on').index();
+
 
     let album_index = $(this).index();
 
@@ -1677,36 +1925,52 @@ $(document).ready(function () {
 
 
 
-
+    // on클래스가 있던 리스트 클릭시에
     if ($(this).hasClass('on')) {
 
 
+      // 비디오를 보여줌
 
       $('.album_vid').removeClass('hidden');
 
+      // 앨범 리스트를 숨김
 
-      $('.album_list').hide();
+      $('.album_list').addClass('hidden');
 
 
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+    // on클래스가 있지 않으면
+
     else {
 
       // 모든 비디오를 초기화
       $('.album_vid li video').each(function () {
-
-
         this.currentTime = 0;
         this.pause();
       });
 
 
+      // 현재 해당하는 비디오만 보여줌
+
 
       $('.album_vid li').removeClass('on');
 
 
-      $('.album_vid li').eq(ac + 1).addClass('on');
+      $('.album_vid li').eq(album_index).addClass('on');
 
     }
 
@@ -1738,13 +2002,24 @@ $(document).ready(function () {
 
 
 
-    $('.album_click li .play').find('i:nth-child(2)').removeClass('on');
 
-    $('.album_click li .play').find('i:nth-child(1)').addClass('on');
 
-    $('.album_click li .play').eq(album_index).find('i:nth-child(1)').removeClass('on');
 
-    $('.album_click li .play').eq(album_index).find('i:nth-child(2)').addClass('on');
+
+    // 기존 인덱스와 누른 인덱스가 다를때
+
+    if (album_origin !== album_index) {
+
+      $('.album_click li .play').find('i:nth-child(2)').removeClass('on');
+
+      $('.album_click li .play').find('i:nth-child(1)').addClass('on');
+
+
+      $('.album_play .play_buttons li').eq(1).trigger('click')
+
+    }
+
+
 
 
 
@@ -1783,7 +2058,7 @@ $(document).ready(function () {
 
     $('.album_vid').addClass('hidden');
 
-    $('.album_list').show();
+    $('.album_list').removeClass('hidden');
 
 
 
@@ -1792,39 +2067,6 @@ $(document).ready(function () {
   })
 
 
-
-
-  // 비디오 클릭시 애니메이션 안되게
-
-  $('.album_vid li video').click(function () {
-
-
-      $('.album_list ul li.on .album_circle4').css({ 'animation-play-state': 'paused' });
-
-
-
-      $('.album_list ul li.on .album_circle4 img').css({ 'animation-play-state': 'paused' });
-
-  })
-
-
-
-
-  $('.album_list ul li .album_circle4').click(function(){
-
-
-
-    $('.album_list ul li .album_circle4').css({ 'animation': 'album2 1s linear'});
-
-
-
-    $('.album_list ul li .album_circle4 img').css({'animation': 'album1 1s linear'});
-
-
-
-
-
-  })
 
 
 
@@ -1882,58 +2124,159 @@ $(document).ready(function () {
 
 
 
-
-
-
   setInterval(function () {
 
-    if ($('.album_click li').eq(0).hasClass('on')) {
 
-      $('.full_minutes').text('03');
+    // 분
+    let minutes = Math.floor($('.album_vid li.on video').get(0).duration / 60);
 
 
-      $('.full_seconds').text('20');
+    // 초
+    let seconds = Math.floor($('.album_vid li.on video').get(0).duration % 60);
+
+
+    // 표시할 분
+    let minutesTxt = 0;
+
+
+    // 표시할 초
+    let secondsTxt = 0;
+
+
+
+    // 분이 10 미만일때 앞에 0붙이기
+
+    if (minutes < 10) {
+
+      minutesTxt = '0' + minutes;
+
+    }
+
+
+    // 그외는 그대로 표시
+
+    else {
+
+      minutesTxt = minutes;
 
     }
 
 
-    if ($('.album_click li').eq(1).hasClass('on')) {
+    // 초가 10 미만일때 앞에 0붙이기
 
+    if (seconds < 10) {
 
-      $('.full_minutes').text('03');
-
-
-      $('.full_seconds').text('30');
-    }
-
-
-    if ($('.album_click li').eq(2).hasClass('on')) {
-
-      $('.full_minutes').text('03');
-
-
-      $('.full_seconds').text('29');
+      secondsTxt = '0' + seconds;
 
     }
 
-    if ($('.album_click li').eq(3).hasClass('on')) {
+    // 그외는 그대로 표시
 
+    else {
 
-      $('.full_minutes').text('03');
-
-
-      $('.full_seconds').text('41');
-    }
-
-    if ($('.album_click li').eq(4).hasClass('on')) {
-
-
-      $('.full_minutes').text('03');
-
-
-      $('.full_seconds').text('53');
+      secondsTxt = seconds;
 
     }
+
+
+
+    // 분, 초 표시
+
+    $('.full_minutes').text(minutesTxt);
+
+
+    $('.full_seconds').text(secondsTxt);
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 분
+    let minutesPlay = Math.floor($('.album_vid li.on video').get(0).currentTime / 60);
+
+
+    // 초
+    let secondsPlay = Math.floor($('.album_vid li.on video').get(0).currentTime % 60);
+
+
+    // 표시할 분
+    let minutesTxtPlay = 0;
+
+
+    // 표시할 초
+    let secondsTxtPlay = 0;
+
+
+
+    // 분이 10 미만일때 앞에 0붙이기
+
+    if (minutesPlay < 10) {
+
+      minutesTxtPlay = '0' + minutesPlay;
+
+    }
+
+
+    // 그외는 그대로 표시
+
+    else {
+
+      minutesTxtPlay = minutesPlay;
+
+    }
+
+
+    // 초가 10 미만일때 앞에 0붙이기
+
+    if (secondsPlay < 10) {
+
+      secondsTxtPlay = '0' + secondsPlay;
+
+    }
+
+    // 그외는 그대로 표시
+
+    else {
+
+      secondsTxtPlay = secondsPlay;
+
+    }
+
+
+
+
+
+
+
+
+    // 분, 초 표시
+
+    $('.this_minutes').text(minutesTxtPlay);
+
+
+    $('.this_seconds').text(secondsTxtPlay);
+
+
+
+
+
+
+
+
+
+
 
 
   }, 500)
@@ -2163,15 +2506,29 @@ $(document).ready(function () {
 
 
 
+
+
+  // 포토 주제 버튼을 클릭하게 되면
+
+
+
   $('.photo_buttons li').click(function () {
 
 
+    // 전체 버튼에 on클래스를 빼고
+
     $('.photo_buttons li').removeClass('on');
 
+    // 클릭한 버튼에 on클래스를 줌
 
     $(this).addClass('on');
 
+    // 클릭한 버튼의 인덱스 값을 구하고
+
     let photoBtn = $(this).index();
+
+
+    // 포토리스트를 모두 숨긴후에 클릭한 버튼의 인덱스 값의 리스트만 보여줌
 
     $('.all_photo_list .photo_list').removeClass('on');
 
@@ -2179,6 +2536,18 @@ $(document).ready(function () {
 
 
   })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2216,12 +2585,15 @@ $(document).ready(function () {
     liWds1[liWd1] = $('.back_signiture>li ul li').eq(liWd1).width() + 80;
 
 
+
   }
+
 
 
   // 초기 width값 설정
 
   let backWd1 = 0;
+
 
 
   // 배열에 담았던 길이값을 전부 더함
@@ -2234,9 +2606,17 @@ $(document).ready(function () {
 
 
 
+
+
+
   // 더한 값을 back_signiture width값에 적용
 
   $('.back_signiture>li').width(backWd1);
+
+
+
+
+
 
 
 
@@ -2283,10 +2663,9 @@ $(document).ready(function () {
   });
 
 
-
   // 더한 값을 back_signiture width값에 적용
 
-  $('.back_signiture>li').width(backWd2);
+  $('.front_signiture>li').width(backWd2);
 
 
 
@@ -2300,27 +2679,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-  // let liWd1 = $('.back_signiture>li ul li').eq(0).width();
-
-
-  // let liWd2 = $('.back_signiture>li ul li').eq(1).width();
-
-  // let liWd3 = $('.back_signiture>li ul li').eq(2).width();
-
-  // let liWd4 = $('.back_signiture>li ul li').eq(3).width();
-
-
-
-
-
-
-
-  // let backWd = $('.back_signiture>li').width(liWd1 + liWd2 + liWd3 + liWd4 + 80 * 4);
 
 
 
